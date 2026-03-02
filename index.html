@@ -508,8 +508,8 @@
         .footer-expanded {
             background: #0f3829;
             color: var(--footer-text);
-            padding: 2rem; /* CHANGED FROM 4rem */
-            margin-top: 2rem; /* CHANGED FROM 3rem */
+            padding: 2rem;
+            margin-top: 2rem;
             border-top: 8px solid var(--accent-gold);
         }
 
@@ -585,7 +585,7 @@
             </div>
         </div>
 
-        <!-- EXPANDED TABBED NAVIGATION -->
+        <!-- EXPANDED TABBED NAVIGATION (now includes Video Tutorial) -->
         <div class="tab-bar">
             <button class="tab active" onclick="switchTab(event, 'tab1')"><i class="fas fa-balance-scale"></i> Legislation & Permits</button>
             <button class="tab" onclick="switchTab(event, 'tab2')"><i class="fas fa-map-signs"></i> Work Planning</button>
@@ -596,10 +596,13 @@
             <button class="tab" onclick="switchTab(event, 'tab7')"><i class="fas fa-clipboard-list"></i> Risk & WHS</button>
             <button class="tab" onclick="switchTab(event, 'tab8')"><i class="fas fa-puzzle-piece"></i> Quizzes & Games</button>
             <button class="tab" onclick="switchTab(event, 'tab9')"><i class="fas fa-print"></i> Printables</button>
+            <!-- NEW VIDEO TAB -->
+            <button class="tab" onclick="switchTab(event, 'tab10')"><i class="fab fa-youtube"></i> Video Tutorial</button>
         </div>
 
         <!-- ===== TAB 1: LEGISLATION & PERMITS ===== -->
         <div id="tab1" class="tab-content active">
+            <!-- (content unchanged) -->
             <h2>⚖️ Environmental Legislation & Permitting Framework</h2>
             
             <div class="legislation-panel">
@@ -666,6 +669,7 @@
 
         <!-- ===== TAB 2: WORK PLANNING ===== -->
         <div id="tab2" class="tab-content">
+            <!-- (content unchanged) -->
             <h2>🗺️ Work Plan Development & Review</h2>
             
             <h3>1. Desktop Survey & Species Selection</h3>
@@ -718,6 +722,7 @@
 
         <!-- ===== TAB 3: SPECIES ID & PROVENANCE ===== -->
         <div id="tab3" class="tab-content">
+            <!-- (content unchanged) -->
             <h2>🔬 Species Identification & Provenance</h2>
             
             <h3>Identification Tools & Resources</h3>
@@ -821,6 +826,7 @@
 
         <!-- ===== TAB 4: COLLECTION METHODS ===== -->
         <div id="tab4" class="tab-content">
+            <!-- (content unchanged) -->
             <h2>🪴 Collection Methods & Equipment</h2>
             
             <h3>Manual Collection Techniques</h3>
@@ -881,6 +887,7 @@
 
         <!-- ===== TAB 5: SUSTAINABILITY & ETHICS ===== -->
         <div id="tab5" class="tab-content">
+            <!-- (content unchanged) -->
             <h2>♻️ Sustainable Collection Practices</h2>
             
             <h3>The 20% Rule: Scientific Basis</h3>
@@ -932,6 +939,7 @@
 
         <!-- ===== TAB 6: CLEANING & STORAGE ===== -->
         <div id="tab6" class="tab-content">
+            <!-- (content unchanged) -->
             <h2>🧹 Seed Cleaning & Storage Protocols</h2>
             
             <h3>Cleaning Methods by Fruit Type</h3>
@@ -986,6 +994,7 @@
 
         <!-- ===== TAB 7: RISK & WHS ===== -->
         <div id="tab7" class="tab-content">
+            <!-- (content unchanged) -->
             <h2>⚠️ Risk Assessment & WHS</h2>
             
             <h3>Risk Assessment Matrix (AS/NZS 4360:2021)</h3>
@@ -1030,6 +1039,7 @@
 
         <!-- ===== TAB 8: QUIZZES & GAMES ===== -->
         <div id="tab8" class="tab-content">
+            <!-- (content unchanged) -->
             <h2>🎮 Interactive Knowledge Checks</h2>
             
             <div class="quiz-container" id="quizModule">
@@ -1142,6 +1152,7 @@
 
         <!-- ===== TAB 9: PRINTABLES ===== -->
         <div id="tab9" class="tab-content">
+            <!-- (content unchanged) -->
             <h2>🖨️ Printable Field Tools & Templates</h2>
             
             <div class="print-card" style="border:4px solid var(--primary-medium); background:white;">
@@ -1211,16 +1222,26 @@
             <div style="display:flex; gap:1rem; margin:2rem 0; flex-wrap:wrap;">
                 <button class="btn" onclick="window.print()"><i class="fas fa-print"></i> Print All Checklists</button>
                 <button class="btn btn-outline" onclick="prepareForExport()"><i class="fas fa-file-pdf"></i> Prepare for PDF Export</button>
-                <!-- <button class="btn btn-outline" onclick="copyChecklists()"><i class="fas fa-copy"></i> Copy to Clipboard</button> ===== COMMENTED OUT UNTIL IMPLEMENTATION ===== -->
             </div>
             <p><small>Tip: Use browser Print → 'Save as PDF' for best results. Print layouts are optimised for A4 portrait.</small></p>
+        </div>
+
+        <!-- ===== NEW TAB 10: VIDEO TUTORIAL ===== -->
+        <div id="tab10" class="tab-content">
+            <h2><i class="fab fa-youtube" style="color:red;"></i> Seed Collection Video Guide</h2>
+            <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; border-radius:2rem; box-shadow:0 20px 30px rgba(0,0,0,0.2); margin:2rem 0;">
+                <iframe style="position:absolute; top:0; left:0; width:100%; height:100%;" src="https://www.youtube.com/embed/F01XSu_U8H4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p style="margin-top:2rem; text-align:center;">
+                <a href="https://www.youtube.com/watch?v=F01XSu_U8H4" target="_blank" class="btn"><i class="fab fa-youtube"></i> Open in YouTube (new tab)</a>
+            </p>
+            <p style="margin-top:1rem; text-align:center;">This video demonstrates best practices for native seed collection, including identification, timing, and sustainable techniques.</p>
         </div>
 
         <!-- ===== FOOTER ===== -->
         <footer class="footer-expanded">
             <div class="footer-grid">
                 <div>
-              <!--      <i class="fas fa-seedling" style="color:#f5b342; font-size:2rem;"></i> COMMENTED OUT SEEDLING ICON -->
                     <h5>AHCECR305 v1.4</h5>
                     <p>Complete learning resource for Certificate III in Conservation and Ecosystem Management</p>
                     <p>Release 1.4 · 2026 · aligned to training.gov.au</p>
