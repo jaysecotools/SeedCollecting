@@ -1,0 +1,2191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>AHCECR305 · Collect Native Seed · Complete Learning Ecosystem</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-dark: #0f3b2c;
+            --primary-medium: #1d5e45;
+            --primary-light: #4a8b6e;
+            --accent-gold: #f5b342;
+            --accent-soft: #fff2db;
+            --bg-light: #f3faf3;
+            --text-dark: #1a3326;
+            --border-light: #c5e0c5;
+            --card-shadow: 0 20px 40px -10px rgba(0, 40, 0, 0.2);
+            --footer-text: #f0ffe0;
+            --footer-heading: #ffda7a;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Roboto, system-ui, sans-serif;
+            background: #d9ead9;
+            color: var(--text-dark);
+            line-height: 1.7;
+            padding: 1rem;
+        }
+
+        .master-ecosystem {
+            max-width: 1800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 3rem;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero-banner {
+            background: linear-gradient(165deg, #0a3625, #1b6b4c, #144d36);
+            color: white;
+            padding: 2.5rem 2rem;
+            border-bottom: 12px solid var(--accent-gold);
+            position: relative;
+        }
+
+        .hero-banner h1 {
+            font-size: clamp(2.2rem, 8vw, 4.2rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            word-break: break-word;
+        }
+
+        .hero-banner h1 i {
+            color: var(--accent-gold);
+            margin-right: 10px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+        }
+
+        .hero-qual {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-qual span {
+            background: rgba(255,255,240,0.15);
+            backdrop-filter: blur(5px);
+            padding: 0.6rem 1.2rem;
+            border-radius: 60px;
+            border-left: 5px solid var(--accent-gold);
+            font-weight: 500;
+        }
+
+        /* ===== TABBED NAVIGATION (with ARIA roles) ===== */
+        .tab-bar {
+            background: #154f34;
+            padding: 0.5rem 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+            border-bottom: 3px solid #a8d0a8;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 8px 20px rgba(0,20,0,0.2);
+        }
+
+        .tab {
+            color: #e0f0da;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.8rem 1rem;
+            cursor: pointer;
+            border-bottom: 4px solid transparent;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: transparent;
+            border: none;
+            font-family: inherit;
+            border-radius: 8px 8px 0 0;
+            flex: 0 1 auto;
+        }
+
+        .tab:hover {
+            background: #216344;
+            color: white;
+        }
+
+        .tab.active {
+            color: white;
+            border-bottom-color: var(--accent-gold);
+            background: linear-gradient(transparent 60%, rgba(245,179,66,0.15) 100%);
+        }
+
+        .tab i {
+            font-size: 1rem;
+        }
+
+        /* ===== MAIN TAB CONTENT AREA ===== */
+        .tab-content {
+            display: none;
+            padding: 2rem 1.5rem;
+            background: white;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0.3; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== CONTENT STYLING (mobile optimised) ===== */
+        h2 {
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin: 1.5rem 0 1.5rem 0;
+            border-left: 15px solid var(--accent-gold);
+            padding-left: 1.2rem;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: clamp(1.4rem, 4vw, 2rem);
+            font-weight: 650;
+            color: #1b5a3a;
+            margin: 2rem 0 1rem 0;
+            border-bottom: 4px dashed #bfe0bf;
+            padding-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        h4 {
+            font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+            color: #154f31;
+            margin: 1.5rem 0 1rem;
+            font-weight: 650;
+        }
+
+        h5 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0f462f;
+            margin: 1.2rem 0 0.8rem;
+        }
+
+        .card-deck {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .info-card {
+            background: var(--bg-light);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 10px 25px rgba(0,30,0,0.08);
+            transition: transform 0.2s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0,60,0,0.15);
+        }
+
+        .info-card i {
+            font-size: 2rem;
+            color: var(--primary-medium);
+            margin-bottom: 1rem;
+        }
+
+        .legislation-panel {
+            background: #eef5ee;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 12px solid #2a6e5a;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .act-list {
+            columns: 1;
+            column-gap: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        @media (min-width: 768px) {
+            .act-list {
+                columns: 2;
+            }
+        }
+
+        .act-item {
+            break-inside: avoid;
+            padding: 0.8rem;
+            background: white;
+            border-radius: 60px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .act-item i {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            width: 2rem;
+            text-align: center;
+        }
+
+        .fruit-type-showcase {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .fruit-pillar {
+            flex: 1 1 250px;
+            background: #f9fff9;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,20,0,0.1);
+            border: 2px solid transparent;
+        }
+
+        .fruit-pillar.A { border-top: 12px solid #c45d9b; }
+        .fruit-pillar.B { border-top: 12px solid #d4a13e; }
+        .fruit-pillar.C { border-top: 12px solid #7f9a6b; }
+
+        .fruit-pillar h5 { font-size: 1.5rem; margin-top: 0.5rem; }
+        .fruit-pillar ul { text-align: left; margin-top: 1.5rem; }
+
+        /* ===== QUIZ STYLES ===== */
+        .quiz-container {
+            background: #1e3d2e;
+            color: #fff8e7;
+            border-radius: 2rem;
+            padding: 1.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .quiz-question-card {
+            background: #2d543a;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .quiz-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+
+        .quiz-option {
+            background: #3f6a4a;
+            margin: 0.8rem 0;
+            padding: 0.8rem 1.5rem;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.1s;
+            border: 2px solid transparent;
+        }
+
+        .quiz-option:hover {
+            background: #568b5e;
+            transform: scale(1.01);
+        }
+
+        .quiz-option input {
+            margin-right: 1rem;
+            transform: scale(1.2);
+            accent-color: var(--accent-gold);
+        }
+
+        .quiz-feedback {
+            display: none;
+            margin-top: 1.2rem;
+            padding: 1.2rem;
+            border-radius: 1rem;
+            font-weight: 500;
+        }
+
+        .feedback-correct { background: #2f7d4f; }
+        .feedback-incorrect { background: #a14f4f; }
+
+        .btn {
+            background: var(--accent-gold);
+            color: #1a401a;
+            border: none;
+            font-weight: 700;
+            padding: 0.8rem 1.8rem;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            border: 2px solid transparent;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #ffc55a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 3px solid var(--primary-medium);
+            color: var(--primary-medium);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary-medium);
+            color: white;
+        }
+
+        /* ===== CHECKLIST STYLES ===== */
+        .checklist-super {
+            background: white;
+            border: 4px solid var(--primary-medium);
+            border-radius: 2rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: var(--card-shadow);
+        }
+
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.6rem 1rem;
+            background: #f0faf0;
+            border-radius: 60px;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+            accent-color: var(--primary-medium);
+        }
+
+        /* ===== DRAG & DROP GAME STYLES ===== */
+        .game-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        @media (min-width: 900px) {
+            .game-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .drag-area {
+            background: #fff2db;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            min-height: 300px;
+        }
+        
+        .drop-area {
+            background: #e3f1e3;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            min-height: 300px;
+        }
+        
+        .drop-zone {
+            background: rgba(196,93,155,0.1);
+            border: 3px dashed #c45d9b;
+            border-radius: 1.5rem;
+            padding: 1rem;
+            margin: 1rem 0;
+            min-height: 70px;
+            transition: all 0.2s;
+        }
+        
+        .drop-zone.B { border-color: #d4a13e; }
+        .drop-zone.C { border-color: #7f9a6b; }
+        
+        .draggable-item {
+            background: white;
+            border-radius: 60px;
+            padding: 0.7rem 1.2rem;
+            margin: 0.5rem 0;
+            cursor: grab;
+            display: inline-block;
+            border: 2px solid var(--primary-medium);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.1s;
+        }
+        
+        .draggable-item:active {
+            cursor: grabbing;
+            opacity: 0.8;
+        }
+        
+        .dropped-item {
+            background: #154f34;
+            color: white;
+            border-radius: 60px;
+            padding: 0.5rem 1rem;
+            margin: 0.3rem;
+            display: inline-block;
+            font-size: 0.9rem;
+            border: 2px solid white;
+        }
+
+        /* ===== TOOL TABLE ===== */
+        .tool-matrix {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,20,0,0.1);
+            margin: 2rem 0;
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        
+        @media (min-width: 768px) {
+            .tool-matrix {
+                display: table;
+                white-space: normal;
+            }
+        }
+
+        .tool-matrix th {
+            background: var(--primary-medium);
+            color: white;
+            padding: 1rem;
+            font-size: 1rem;
+        }
+
+        .tool-matrix td {
+            padding: 1rem;
+            border-bottom: 1px solid #c5e0c5;
+            vertical-align: top;
+        }
+
+        .tool-matrix tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ===== RISK MATRIX ===== */
+        .risk-table {
+            width: 100%;
+            border-collapse: collapse;
+            display: block;
+            overflow-x: auto;
+        }
+
+        .risk-table th {
+            background: #154f34;
+            color: white;
+            padding: 0.8rem;
+        }
+
+        .risk-table td {
+            border: 2px solid #b5d6b5;
+            padding: 0.8rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .risk-low { background: #c8e6c8; }
+        .risk-medium { background: #fff3b0; }
+        .risk-high { background: #ffb5b5; }
+        .risk-extreme { background: #ff8080; color: white; }
+
+        /* ===== GLOSSARY STYLES ===== */
+        .glossary-term {
+            display: inline-block;
+            background: #e3f1e3;
+            border-bottom: 2px dotted var(--primary-medium);
+            cursor: help;
+            position: relative;
+            font-weight: 500;
+            padding: 0 4px;
+            margin: 0 2px;
+        }
+
+        .glossary-definition {
+            display: none;
+            position: absolute;
+            background: var(--primary-dark);
+            color: white;
+            padding: 0.8rem 1.2rem;
+            border-radius: 1rem;
+            width: min(250px, 80vw);
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 100%;
+            margin-bottom: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            z-index: 1000;
+            font-size: 0.85rem;
+            font-weight: normal;
+            border: 3px solid var(--accent-gold);
+        }
+
+        .glossary-term:hover .glossary-definition {
+            display: block;
+        }
+
+        .glossary-definition::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -8px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: var(--primary-dark) transparent transparent transparent;
+        }
+
+        /* ===== PHOTO GALLERY STYLES ===== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            background: var(--bg-light);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,20,0,0.1);
+            transition: transform 0.3s;
+            border: 2px solid var(--border-light);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--accent-gold);
+            background: #d9ead9;
+        }
+
+        .gallery-caption {
+            padding: 1rem;
+        }
+
+        .gallery-caption h4 {
+            margin: 0 0 0.3rem 0;
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+        }
+
+        .gallery-caption p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #2a4a2a;
+        }
+
+        .photo-credit {
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* ===== SCENARIO STYLES ===== */
+        .scenario-box {
+            background: #fff2db;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 12px solid var(--accent-gold);
+            box-shadow: var(--card-shadow);
+        }
+
+        .scenario-question {
+            background: white;
+            border-radius: 1.2rem;
+            padding: 1.2rem;
+            margin: 1.2rem 0;
+            border: 2px solid var(--primary-light);
+        }
+
+        .scenario-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin: 1.2rem 0;
+        }
+
+        .scenario-option {
+            background: white;
+            border: 2px solid var(--border-light);
+            border-radius: 60px;
+            padding: 0.8rem 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .scenario-option:hover {
+            background: var(--accent-soft);
+            border-color: var(--accent-gold);
+        }
+
+        .scenario-option.selected {
+            background: var(--primary-medium);
+            color: white;
+            border-color: var(--accent-gold);
+        }
+
+        .scenario-feedback {
+            display: none;
+            background: white;
+            border-radius: 1.2rem;
+            padding: 1.2rem;
+            margin-top: 1.2rem;
+            border: 4px solid;
+        }
+
+        .feedback-good {
+            border-color: #2f7d4f;
+        }
+
+        .feedback-risky {
+            border-color: var(--accent-gold);
+        }
+
+        .feedback-poor {
+            border-color: #a14f4f;
+        }
+
+        /* ===== RESOURCES TAB ===== */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .resource-card {
+            background: var(--bg-light);
+            border-radius: 2rem;
+            padding: 2rem 1.5rem;
+            border: 2px solid var(--border-light);
+            transition: transform 0.2s;
+            height: 100%;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,60,0,0.15);
+        }
+
+        .resource-card h3 {
+            margin-top: 0;
+            border-bottom: none;
+            color: var(--primary-dark);
+            font-size: 1.8rem;
+            gap: 10px;
+        }
+
+        .resource-card ul {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .resource-card li {
+            margin: 1rem 0;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed var(--border-light);
+        }
+
+        .resource-card a {
+            color: var(--primary-medium);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.2s;
+        }
+
+        .resource-card a:hover {
+            color: var(--accent-gold);
+            text-decoration: underline;
+        }
+
+        .resource-card i {
+            font-size: 1.4rem;
+            width: 2rem;
+            color: var(--primary-dark);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-expanded {
+            background: #0f3829;
+            color: var(--footer-text);
+            padding: 2rem 1.5rem;
+            margin-top: 2rem;
+            border-top: 8px solid var(--accent-gold);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 640px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        .footer-expanded h4, .footer-expanded h5 {
+            color: var(--footer-heading);
+            font-weight: 700;
+            margin-bottom: 1rem; 
+            font-size: 1.2rem;
+        }
+        
+        .footer-expanded a {
+            color: var(--footer-heading);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--footer-heading);
+            word-break: break-word;
+        }
+        
+        .footer-expanded a:hover {
+            color: white;
+            border-bottom: 1px solid white;
+        }
+
+        .footer-expanded ul {
+            list-style: none;
+        }
+
+        .footer-expanded li {
+            margin: 0.5rem 0;
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            .tab-bar, .btn, .hero-banner, .quiz-container, .game-container, 
+            .gallery-grid, .glossary-term, .scenario-box { 
+                display: none !important; 
+            }
+            .tab-content { 
+                display: block !important; 
+                page-break-after: always;
+                padding: 1rem;
+            }
+            body { 
+                background: white; 
+                padding: 0;
+                font-size: 11pt;
+            }
+            .checklist-super {
+                border: 2px solid black;
+                box-shadow: none;
+                page-break-inside: avoid;
+            }
+            .footer-expanded {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="master-ecosystem">
+        <!-- HERO SECTION -->
+        <div class="hero-banner">
+            <h1><i class="fas fa-seedling"></i> AHCECR305 · Collect Native Seed</h1>
+            <div class="hero-qual">
+                <span><i class="fas fa-certificate"></i> Certificate III in Conservation & Ecosystem Management</span>
+                <span><i class="fas fa-clipboard-check"></i> Release 1.4 · 2026</span>
+                <span><i class="fas fa-flask"></i> Florabank · NRE Tas · Understorey Network</span>
+            </div>
+        </div>
+
+        <!-- EXPANDED TABBED NAVIGATION with ARIA roles -->
+        <div class="tab-bar" role="tablist" aria-label="Learning modules">
+            <button class="tab active" id="tab-tab1" role="tab" aria-selected="true" aria-controls="tab1" onclick="switchTab(event, 'tab1')"><i class="fas fa-balance-scale"></i> <span>Legislation</span></button>
+            <button class="tab" id="tab-tab2" role="tab" aria-selected="false" aria-controls="tab2" onclick="switchTab(event, 'tab2')"><i class="fas fa-map-signs"></i> <span>Planning</span></button>
+            <button class="tab" id="tab-tab3" role="tab" aria-selected="false" aria-controls="tab3" onclick="switchTab(event, 'tab3')"><i class="fas fa-search"></i> <span>Species ID</span></button>
+            <button class="tab" id="tab-tab4" role="tab" aria-selected="false" aria-controls="tab4" onclick="switchTab(event, 'tab4')"><i class="fas fa-hand-holding-heart"></i> <span>Collection</span></button>
+            <button class="tab" id="tab-tab5" role="tab" aria-selected="false" aria-controls="tab5" onclick="switchTab(event, 'tab5')"><i class="fas fa-leaf"></i> <span>Sustainability</span></button>
+            <button class="tab" id="tab-tab6" role="tab" aria-selected="false" aria-controls="tab6" onclick="switchTab(event, 'tab6')"><i class="fas fa-broom"></i> <span>Storage</span></button>
+            <button class="tab" id="tab-tab7" role="tab" aria-selected="false" aria-controls="tab7" onclick="switchTab(event, 'tab7')"><i class="fas fa-clipboard-list"></i> <span>Risk & WHS</span></button>
+            <button class="tab" id="tab-tab8" role="tab" aria-selected="false" aria-controls="tab8" onclick="switchTab(event, 'tab8')"><i class="fas fa-puzzle-piece"></i> <span>Quizzes</span></button>
+            <button class="tab" id="tab-tab9" role="tab" aria-selected="false" aria-controls="tab9" onclick="switchTab(event, 'tab9')"><i class="fas fa-print"></i> <span>Printables</span></button>
+            <button class="tab" id="tab-tab10" role="tab" aria-selected="false" aria-controls="tab10" onclick="switchTab(event, 'tab10')"><i class="fab fa-youtube"></i> <span>Video</span></button>
+            <button class="tab" id="tab-tab11" role="tab" aria-selected="false" aria-controls="tab11" onclick="switchTab(event, 'tab11')"><i class="fas fa-images"></i> <span>Gallery</span></button>
+            <button class="tab" id="tab-tab12" role="tab" aria-selected="false" aria-controls="tab12" onclick="switchTab(event, 'tab12')"><i class="fas fa-book-open"></i> <span>Glossary</span></button>
+            <button class="tab" id="tab-tab13" role="tab" aria-selected="false" aria-controls="tab13" onclick="switchTab(event, 'tab13')"><i class="fas fa-comment-dots"></i> <span>Scenarios</span></button>
+            <!-- NEW TAB: Links & Resources -->
+            <button class="tab" id="tab-tab14" role="tab" aria-selected="false" aria-controls="tab14" onclick="switchTab(event, 'tab14')"><i class="fas fa-link"></i> <span>Links & Resources</span></button>
+        </div>
+
+        <!-- ===== TAB 1: LEGISLATION & PERMITS ===== (kept as before) -->
+        <div id="tab1" class="tab-content active" role="tabpanel" aria-labelledby="tab-tab1">
+            <h2>⚖️ Environmental Legislation & Permitting Framework</h2>
+            
+            <div class="legislation-panel">
+                <h3><i class="fas fa-gavel"></i> Understanding 'Take' Under Tasmanian Law</h3>
+                <p>Under Tasmanian legislation, the term <strong>'take'</strong> is used to identify activities which are prohibited without authorisation:</p>
+                <ul style="margin-left:1.5rem; margin-bottom:1.5rem;">
+                    <li>For species listed on the <strong>Threatened Species Protection Act 1995</strong>, 'take' includes killing, catching, damaging or collecting any listed plant, plant part or product – including seed, foliage, roots, bark, sap etc.</li>
+                    <li>For any flora species on land reserved under the <strong>Nature Conservation Act 2002</strong>, 'take' includes destroying, damaging or interfering with a native plant, plant part or product, including dead plant products such as wood, leaf litter etc.</li>
+                </ul>
+                <p><cite>Source: <a href="https://nre.tas.gov.au/conservation/forms-and-permits/scientific-permits-and-authorities-to-collect-native-flora" target="_blank">NRE Tas Scientific Permits</a></cite></p>
+            </div>
+
+            <h3>📋 When is a Permit Required?</h3>
+            <div class="card-deck">
+                <div class="info-card">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h4>Threatened Species</h4>
+                    <p>Native plant species listed as <strong>endangered, vulnerable or rare</strong> under the <em>Threatened Species Protection Act 1995</em>. In this case, a permit is required <strong>regardless of the land tenure</strong> (public or private land).</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-tree"></i>
+                    <h4>Public Lands</h4>
+                    <p>Any native plant species from <strong>public lands managed by the State Government</strong> (National Parks, State Forest, Crown Land, reserves) requires a permit.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h4>Private Sanctuaries</h4>
+                    <p>Any native plant species from <strong>Private Sanctuaries and Private Nature Reserves</strong> declared under the <em>Nature Conservation Act 2002</em>, if you are <strong>not the owner</strong> of that land.</p>
+                </div>
+            </div>
+
+            <h3>🔍 How to Apply for a Permit</h3>
+            <div style="background:#f5f9f5; border-radius:1.5rem; padding:1.5rem;">
+                <ol style="margin-left:1.5rem;">
+                    <li><strong>Determine if you need a permit</strong> using the criteria above.</li>
+                    <li><strong>Read the Permit Application Guidelines</strong> – includes information on how to apply, fill out forms, and what happens after submission.</li>
+                    <li><strong>Complete the Permit Application Form</strong> (Word or PDF format) available from NRE Tas.</li>
+                    <li>Submit to the appropriate section:
+                        <ul style="margin-left:1.5rem;">
+                            <li><strong>For Non-Threatened Plants from Reserved Lands:</strong> Ecologist, Natural Values Science, Natural and Cultural Heritage Division, GPO Box 44 Hobart, TAS 7001</li>
+                            <li><strong>For Threatened Native Plants:</strong> Threatened Species, Natural and Cultural Heritage Division, GPO Box 44 Hobart, TAS 7001</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p><strong>Contact:</strong> Flora Permit Enquiries – <a href="mailto:FloraPermit.Enquiries@nre.tas.gov.au">FloraPermit.Enquiries@nre.tas.gov.au</a></p>
+            </div>
+
+            <h3>⚠️ Important Considerations</h3>
+            <ul>
+                <li><strong>Increment cores and wood samples</strong> on reserved land for dendrochronology research have additional restrictions – contact FloraPermit.Enquiries@nre.tas.gov.au</li>
+                <li><strong>Aboriginal and Historic heritage</strong> must be considered before any ground disturbing works. Failure to demonstrate due diligence may result in substantial penalties. See Aboriginal Heritage Tasmania or Heritage Tasmania.</li>
+                <li><strong>Commonwealth areas in Tasmania:</strong> For permits covering Commonwealth land, see the Commonwealth Government Department of Environment and Heritage website for Listed Species Permits.</li>
+            </ul>
+
+            <h3>📚 Key Legislation Summary</h3>
+            <div class="act-list">
+                <div class="act-item"><i class="fas fa-file-contract"></i> <strong>Threatened Species Protection Act 1995</strong> (Tas) – listed species, any tenure</div>
+                <div class="act-item"><i class="fas fa-file-contract"></i> <strong>Nature Conservation Act 2002</strong> (Tas) – reserved land, sanctuaries</div>
+                <div class="act-item"><i class="fas fa-file-contract"></i> <strong>National Parks and Reserves Management Act 2002</strong> – public reserves</div>
+                <div class="act-item"><i class="fas fa-file-contract"></i> <strong>Crown Lands Act 1976</strong> – Crown land</div>
+                <div class="act-item"><i class="fas fa-file-contract"></i> <strong>EPBC Act 1999</strong> (Commonwealth) – Matters of National Environmental Significance</div>
+            </div>
+        </div>
+
+        <!-- ===== TAB 2: WORK PLANNING ===== -->
+        <div id="tab2" class="tab-content">
+            <!-- (content unchanged) -->
+            <h2>🗺️ Work Plan Development & Review</h2>
+            
+            <h3>1. Desktop Survey & Species Selection</h3>
+            <div style="background:#e3f1e3; border-radius:2rem; padding:2rem;">
+                <h4>Florabank Guidelines: Essential Planning Steps</h4>
+                <ul style="margin-left:2rem;">
+                    <li><strong>Desktop survey:</strong> AVH, Atlas of Living Australia, regional vegetation guides, local council databases</li>
+                    <li><strong>Species list refinement:</strong> consider seed storage behaviour (orthodox/recalcitrant), collection difficulty, quantity needed</li>
+                    <li><strong>Phenology research:</strong> flowering and fruiting periods from herbarium records, previous collections (Australian Seed Bank Partnership)</li>
+                </ul>
+            </div>
+
+            <h3>2. Work Plan Components (Detailed)</h3>
+            <div class="checklist-super">
+                <h4><i class="fas fa-check-double"></i> Mandatory Work Plan Elements</h4>
+                <div class="checklist-grid">
+                    <div class="checklist-item"><input type="checkbox"> <strong>Species required:</strong> botanical name, common name, target quantity, fruit type (A/B/C)</div>
+                    <div class="checklist-item"><input type="checkbox"> <strong>Location details:</strong> property name, reserve, GPS coordinates (GDA2020), access notes</div>
+                    <div class="checklist-item"><input type="checkbox"> <strong>Timing:</strong> preferred collection window, backup dates, flowering status check</div>
+                    <div class="checklist-item"><input type="checkbox"> <strong>Permits:</strong> permit numbers attached, landholder permission letter, Indigenous consultation</div>
+                    <div class="checklist-item"><input type="checkbox"> <strong>Personnel:</strong> collector names, supervisor contact, emergency contacts (3 people)</div>
+                    <div class="checklist-item"><input type="checkbox"> <strong>Equipment list:</strong> collection tools, cleaning gear, PPE, vehicles</div>
+                    <div class="checklist-item"><input type="checkbox"> <strong>Transport & logistics:</strong> cool storage, delivery arrangements to nursery/seed bank</div>
+                    <div class="checklist-item"><input type="checkbox"> <strong>Risk assessment:</strong> WHS and environmental hazards signed off</div>
+                    <div class="checklist-item"><input type="checkbox"> <strong>Review date:</strong> scheduled pre-collection review</div>
+                </div>
+            </div>
+
+            <h3>3. Reconnaissance & Site Assessment</h3>
+            <p>Conduct site visit during flowering to:</p>
+            <ul style="margin-left:2rem;">
+                <li>Confirm species presence and population size (count plants)</li>
+                <li>Assess plant health and seed crop potential (estimate % of plants with fruit)</li>
+                <li>Mark up to 20 plants with GPS and biodegradable flagging tape for later return</li>
+                <li>Identify access issues, hazards, sensitive areas (wetlands, nesting sites)</li>
+                <li>Check for nesting birds, threatened species habitat (consult threatened species lists)</li>
+                <li>Collect soil sample for pH/texture if needed for provenance matching</li>
+            </ul>
+
+            <h3>4. Work Plan Review Process</h3>
+            <table class="tool-matrix">
+                <tr><th>Review trigger</th><th>Action required</th><th>Documentation</th></tr>
+                <tr><td>Weather changes (rain, extreme heat, fire danger)</td><td>Delay collection if rain/fire risk; adjust drying plan; postpone if total fire ban</td><td>Note on work plan revision with date</td></tr>
+                <tr><td>Phenology shift (early/late ripening)</td><td>Adjust collection dates, may need new reconnaissance visit</td><td>Update collection schedule, inform supervisor</td></tr>
+                <tr><td>Access issues (gate locked, road closed)</td><td>Contact landholder, find alternate site, or delay</td><td>Record in review section with photos</td></tr>
+                <tr><td>Species unavailable (crop failure, fire damage)</td><td>Select alternative species meeting fruit type requirements (from approved list)</td><td>Seek supervisor approval, update species list</td></tr>
+                <tr><td>Permit delay</td><td>Do not proceed until permit received; reschedule</td><td>Note permit receipt date in log</td></tr>
+            </table>
+        </div>
+
+        <!-- ===== TAB 3: SPECIES ID & PROVENANCE ===== -->
+        <div id="tab3" class="tab-content">
+            <!-- (content unchanged) -->
+            <h2>🔬 Species Identification & Provenance</h2>
+            
+            <h3>Identification Tools & Resources</h3>
+            <div class="card-deck">
+                <div class="info-card">
+                    <i class="fas fa-book"></i>
+                    <h4>Digital Floras</h4>
+                    <ul>
+                        <li>PlantNET (NSW Flora Online)</li>
+                        <li>VicFlora (Victoria)</li>
+                        <li>EUCLID (Eucalypts)</li>
+                        <li>World Wide Wattle (Acacia)</li>
+                        <li>Understorey Network Database (1800+ Tasmanian species)</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Herbarium Resources</h4>
+                    <ul>
+                        <li>Australasian Virtual Herbarium (AVH) – 8 million specimens</li>
+                        <li>State herbaria (HO – Tas, MEL – Vic, etc.)</li>
+                        <li>Digital specimen images with GPS coordinates</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-camera"></i>
+                    <h4>Field Guides & Apps</h4>
+                    <ul>
+                        <li>iNaturalist Australia (community ID)</li>
+                        <li>Local field guides (e.g., "Wildflowers of Tasmania")</li>
+                        <li>Regional vegetation guides (available from councils)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Provenance: The Science of Local Adaptation</h3>
+            <div style="background:#fff2db; border-radius:2rem; padding:2rem; margin:2rem 0;">
+                <h4>Why Provenance Matters</h4>
+                <p>Plants collected from similar environmental conditions (rainfall, temperature, soil type, altitude) will have adapted to those conditions. Using local provenance seed increases survival rates in restoration projects by up to 300% (Florabank data).</p>
+                <p><strong>Seed Transfer Zones:</strong> Many states have defined zones – collect within the same zone as planting site. In Tasmania, consider bioregions (e.g., Furneaux, Ben Lomond, West Coast).</p>
+                <p><strong>Climate matching:</strong> With climate change, some practitioners use 'climate-adjusted provenancing' – collecting from slightly warmer/drier areas to future-proof restoration.</p>
+            </div>
+
+            <h3>Uncertain Species Protocol</h3>
+            <div style="background:#dff0df; border-radius:2rem; padding:2rem;">
+                <h4>Step-by-Step Voucher Collection</h4>
+                <ol>
+                    <li>Collect representative specimen: 30cm branch with leaves, flowers if possible, fruits (if available)</li>
+                    <li>Press immediately in newspaper with cardboard, change papers daily for 2 weeks</li>
+                    <li>Photograph: whole plant, bark, leaves (upper and lower), flower close-up, fruit, habitat</li>
+                    <li>Record: location (GPS GDA2020), date, habitat, plant height, flower colour, abundance, associated species</li>
+                    <li>Assign temporary ID (e.g., "Acacia sp. Freer Farm")</li>
+                    <li>Submit to state herbarium for identification (may take weeks, fee applicable – contact herbarium first)</li>
+                </ol>
+            </div>
+
+            <h3>Fruit Type Explorer</h3>
+            <div class="fruit-type-showcase">
+                <div class="fruit-pillar A">
+                    <i class="fas fa-apple-alt" style="font-size:3rem; color:#c45d9b;"></i>
+                    <h5>Fleshy Fruits (A)</h5>
+                    <ul>
+                        <li><i>Billardiera longiflora</i> (climbing blueberry)</li>
+                        <li><i>Tasmannia lanceolata</i> (mountain pepper)</li>
+                        <li><i>Coprosma quadrifida</i> (native currant)</li>
+                        <li><i>Astroloma humifusum</i> (cranberry heath)</li>
+                        <li><i>Exocarpos cupressiformis</i> (native cherry)</li>
+                        <li><i>Leucopogon parviflorus</i> (coastal beard-heath)</li>
+                    </ul>
+                </div>
+                <div class="fruit-pillar B">
+                    <i class="fas fa-seedling" style="font-size:3rem; color:#d4a13e;"></i>
+                    <h5>Dry Dehiscent (B)</h5>
+                    <ul>
+                        <li><i>Acacia melanoxylon</i> (blackwood wattle)</li>
+                        <li><i>Acacia verticillata</i> (prickly wattle)</li>
+                        <li><i>Eucalyptus obliqua</i> (messmate)</li>
+                        <li><i>Eucalyptus amygdalina</i> (black peppermint)</li>
+                        <li><i>Leptospermum scoparium</i> (manuka)</li>
+                        <li><i>Melaleuca squarrosa</i> (scented paperbark)</li>
+                        <li><i>Banksia marginata</i> (silver banksia)</li>
+                        <li><i>Hakea epiglottis</i> (beaked hakea)</li>
+                    </ul>
+                </div>
+                <div class="fruit-pillar C">
+                    <i class="fas fa-grass" style="font-size:3rem; color:#7f9a6b;"></i>
+                    <h5>Dry Indehiscent (C)</h5>
+                    <ul>
+                        <li><i>Poa poiformis</i> (coastal tussock-grass)</li>
+                        <li><i>Poa labillardierei</i> (silver tussock-grass)</li>
+                        <li><i>Carex appressa</i> (tall sedge)</li>
+                        <li><i>Carex fascicularis</i> (tassel sedge)</li>
+                        <li><i>Gahnia grandis</i> (saw sedge)</li>
+                        <li><i>Juncus kraussii</i> (sea rush)</li>
+                        <li><i>Juncus pallidus</i> (great rush)</li>
+                        <li><i>Lomandra longifolia</i> (sagg)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== TAB 4: COLLECTION METHODS ===== -->
+        <div id="tab4" class="tab-content">
+            <!-- (content unchanged) -->
+            <h2>🪴 Collection Methods & Equipment</h2>
+            
+            <h3>Manual Collection Techniques</h3>
+            <table class="tool-matrix">
+                <tr><th>Method</th><th>Description</th><th>Suitable Species</th><th>Equipment</th></tr>
+                <tr><td>Hand picking</td><td>Selectively remove ripe fruits by hand</td><td>Fleshy fruits (Billardiera, Coprosma), large pods (Acacia)</td><td>Bags, buckets, secateurs, gloves</td></tr>
+                <tr><td>Stripping</td><td>Run hand along stem to strip seeds</td><td>Grasses, sedges (Poa, Carex, Juncus)</td><td>Gloves, collection bag, sieve for cleaning</td></tr>
+                <tr><td>Cutting branches</td><td>Remove branches with seed, place on tarp</td><td>Eucalypts, Banksia, Melaleuca, Leptospermum</td><td>Pole pruner, secateurs, loppers, tarp (3x3m)</td></tr>
+                <tr><td>Shaking/beating</td><td>Shake or beat branches over sheet to release seed</td><td>Dehiscent species (Leptospermum, Melaleuca, Callistemon)</td><td>Sticks, hessian, tarpaulin, collection trays</td></tr>
+                <tr><td>Vacuum collection</td><td>Modified leaf blower/vac to suck seeds from plants/ground</td><td>Small-seeded species (Callistemon, Melaleuca, Ericaceae)</td><td>Blower-vac with collection bag, fine mesh filters</td></tr>
+                <tr><td>Fallen material</td><td>Collect freshly fallen seed from ground under parent plants</td><td>Banksia cones, eucalypt fruit, Allocasuarina cones</td><td>Hand rakes, bags, sieves for cleaning</td></tr>
+                <tr><td>Rifle/bow (specialist)</td><td>Shoot small branches to bring down high seed</td><td>Tall eucalypts, rainforest trees</td><td>Firearms licence, landholder permission, safety training</td></tr>
+            </table>
+
+            <h3>Above 2m Collection Methods</h3>
+            <div class="card-deck">
+                <div class="info-card">
+                    <i class="fas fa-arrow-up"></i>
+                    <h4>Pole Pruner + Ground Sheet</h4>
+                    <p>Extendable pruner (3-8m). Cut branches over tarp. Best for most species up to 8m. Requires practice to avoid branch damage. Ensure tarp is securely pegged in wind.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-ladder"></i>
+                    <h4>Ladders & Ropes</h4>
+                    <p>Orchard ladder (tripod) or climbing ropes with harness (requires certified training). Use for tall trees up to 15m. Ensure 3 points of contact, ladder on firm ground, spotter present.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h4>Hydraulic Lift/Elevated Work Platform</h4>
+                    <p>For large-scale commercial collection. Requires operator licence, traffic management if near roads. Expensive but efficient for high-volume collection.</p>
+                </div>
+            </div>
+
+            <h3>Equipment Care & Maintenance</h3>
+            <ul style="margin-left:2rem;">
+                <li><strong>Secateurs/loppers:</strong> Sharpen with diamond file after each trip, clean with 70% methylated spirits (biosecurity), oil pivot points with light machine oil</li>
+                <li><strong>Pole pruner:</strong> Check rope condition (fraying), blade sharpness, extension locks functional. Clean after each use.</li>
+                <li><strong>Tarpaulins:</strong> Shake out debris, dry thoroughly before storing, repair tears with tape or stitching</li>
+                <li><strong>Bags:</strong> Paper bags – single use only; hessian – wash in hot water and dry; plastic – wash with detergent, dry, check for holes</li>
+                <li><strong>Scales:</strong> Calibrate annually with test weights, check battery before each trip, zero before weighing</li>
+                <li><strong>GPS:</strong> Update maps, carry spare batteries (2 sets), download waypoints before trip</li>
+                <li><strong>Seed sieves:</strong> Clean with brush, check for bent mesh, store flat</li>
+            </ul>
+
+            <h3>Collection Quantity Calculations</h3>
+            <div style="background:#f5f9f5; border-radius:2rem; padding:2rem;">
+                <h4>How Much to Collect?</h4>
+                <p><strong>Rule of thumb:</strong> collect 2-3 times the amount needed, accounting for:</p>
+                <ul>
+                    <li>Cleaning losses (chaff, empty seeds, debris) – can be 30-80% depending on species</li>
+                    <li>Viability testing failures (germination tests may show 20-90% viability)</li>
+                    <li>Storage/insurance buffer (10-20% extra for backup)</li>
+                </ul>
+                <p><strong>Example calculation:</strong> Need 1000 viable seeds for nursery. Estimated cleaning loss 40%, viability 60% → collect approx 2,800 seeds (1000 / 0.6 / 0.6).</p>
+                <p><strong>Weight estimation:</strong> Count seeds in 1g sample × total grams collected. e.g., Eucalyptus 500 seeds/g → 50g = 25,000 seeds.</p>
+            </div>
+        </div>
+
+        <!-- ===== TAB 5: SUSTAINABILITY & ETHICS ===== -->
+        <div id="tab5" class="tab-content">
+            <!-- (content unchanged) -->
+            <h2>♻️ Sustainable Collection Practices</h2>
+            
+            <h3>The 20% Rule: Scientific Basis</h3>
+            <div style="background:#eef5ee; border-radius:2rem; padding:2rem;">
+                <p>Research (Florabank, 2021) shows collecting <strong>no more than 20% of available seed</strong> from a population ensures:</p>
+                <ul>
+                    <li>Sufficient seed for natural regeneration and recruitment</li>
+                    <li>Maintenance of genetic diversity within the population</li>
+                    <li>Food source for native animals (birds, mammals, insects) preserved</li>
+                    <li>Population resilience to environmental stress</li>
+                </ul>
+                <p><strong>Application:</strong> Visually estimate total seed crop (e.g., count fruits on representative branches, multiply by number of branches). Collect ≤20% from each plant. For small populations (<20 plants), collect from fewer plants (e.g., 5 plants) or lower percentage (10%).</p>
+            </div>
+
+            <h3>Ethical Collection Guidelines</h3>
+            <div class="card-deck">
+                <div class="info-card">
+                    <i class="fas fa-fire"></i>
+                    <h4>Avoid Post-Fire Areas</h4>
+                    <p>Plants regenerating after fire need all seeds for population recovery. Wait at least 2-3 years post-fire, and only collect if population is robust (>50 plants).</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-paw"></i>
+                    <h4>Protect Fauna</h4>
+                    <p>Check for nests, hollows, feeding activity before collecting. Delay collection if birds are nesting in target plants. Leave seed on ground for ground-foraging birds and mammals. Avoid collecting from plants with active insect herbivory (may indicate stressed plants).</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-biohazard"></i>
+                    <h4>Biosecurity Protocols</h4>
+                    <p>Clean footwear, tools, vehicle tyres before entering and after leaving site. Use 70% ethanol or 1% bleach solution (30min contact). Prevents spread of Phytophthora cinnamomi (root rot), myrtle rust (Austropuccinia psidii), and weed seeds.</p>
+                </div>
+            </div>
+
+            <h3>Environmental Impact Assessment (Template)</h3>
+            <div class="checklist-super">
+                <h4>Pre-Collection Environmental Checklist</h4>
+                <div class="checklist-grid">
+                    <div class="checklist-item"><input type="checkbox"> Check for threatened flora populations (consult EPBC Protected Matters Search Tool, Tasmanian TSP listings)</div>
+                    <div class="checklist-item"><input type="checkbox"> Identify and mark sensitive habitats (wetlands, moss beds, rock outcrops, threatened vegetation communities)</div>
+                    <div class="checklist-item"><input type="checkbox"> Plan access routes to minimise trampling and soil disturbance</div>
+                    <div class="checklist-item"><input type="checkbox"> Check for weed infestations – plan to clean down after leaving weedy areas</div>
+                    <div class="checklist-item"><input type="checkbox"> Assess soil erosion risk – avoid steep slopes when wet, use designated tracks</div>
+                    <div class="checklist-item"><input type="checkbox"> Check weather forecast – avoid collection before rain (mould risk), postpone if high winds (safety)</div>
+                    <div class="checklist-item"><input type="checkbox"> Plan to leave site cleaner than found (remove rubbish, flagging tape, food scraps)</div>
+                    <div class="checklist-item"><input type="checkbox"> Record any environmental observations (wildlife sightings, weed presence, fire damage)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== TAB 6: CLEANING & STORAGE ===== -->
+        <div id="tab6" class="tab-content">
+            <!-- (content unchanged) -->
+            <h2>🧹 Seed Cleaning & Storage Protocols</h2>
+            
+            <h3>Cleaning Methods by Fruit Type</h3>
+            <table class="tool-matrix">
+                <tr><th>Fruit Type</th><th>Cleaning Method</th><th>Equipment</th><th>Notes</th></tr>
+                <tr><td>Fleshy (A)</td><td>Macerate (mush) fruit, ferment 1-3 days, float off pulp, rinse seeds, dry</td><td>Bowl, sieve (graded), water, food processor (gentle pulse), paper towel</td><td>Remove all flesh to prevent mould; change water daily; some seeds need acid treatment</td></tr>
+                <tr><td>Dry Dehiscent (B)</td><td>Thresh (rub) to break open capsules, sieve to separate, winnow (air)</td><td>Rubber mat, sieves (various mesh sizes), seed blower, wind tray, leaf blower</td><td>Eucalypts: oven at 50-70°C for 24h to open capsules</td></tr>
+                <tr><td>Dry Indehiscent (C)</td><td>Rub over coarse sieve, air separation, gravity table</td><td>Graded sieves (2-5mm), seed blower, gravity separator</td><td>Grasses – remove awns, chaff; use pneumatic separator if available</td></tr>
+                <tr><td>Cone-bearing (Banksia, Hakea)</td><td>Oven heating to open woody cones, then shake out seeds</td><td>Oven (50-70°C), trays, heat-proof containers, tweezers</td><td>Monitor temperature closely – don't cook seeds; check regularly</td></tr>
+                <tr><td>Legumes (Acacia, Pultenaea)</td><td>Thresh pods, sieve, sometimes heat treatment for hard seeds</td><td>Threshing bag, sieves, hot water (optional)</td><td>Some need boiling water or scarification for germination – not for storage</td></tr>
+            </table>
+
+            <h3>Drying Protocols</h3>
+            <ul>
+                <li><strong>Air drying:</strong> Spread in single layer on newspaper/trays, room temperature (15-25°C), low humidity (<50%), good airflow. Turn daily for even drying.</li>
+                <li><strong>Silica gel drying:</strong> For humid conditions, use sealed container with colour-indicating silica gel (ratio 1:1 seed:gel). Regenerate gel in oven when saturated.</li>
+                <li><strong>Moisture content target:</strong> Orthodox seeds 5-8% for long-term storage (can be tested with moisture meter). Recalcitrant seeds cannot be dried below 30-50% – sow fresh.</li>
+                <li><strong>Testing dryness:</strong> Seed should crack/snap cleanly when bent, not feel soft or cool to touch.</li>
+                <li><strong>Duration:</strong> Drying typically 1-4 weeks depending on seed size and humidity.</li>
+            </ul>
+
+            <h3>Storage Systems</h3>
+            <div class="card-deck">
+                <div class="info-card">
+                    <i class="fas fa-thermometer-half"></i>
+                    <h4>Short-term (0-2 years)</h4>
+                    <p>Airtight containers (glass jars with rubber seal, ziplock bags with air expelled), cool dark cupboard (15-20°C constant). Add silica gel packets (change monthly). Check monthly for mould, insects, condensation.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-snowflake"></i>
+                    <h4>Long-term (2-20+ years)</h4>
+                    <p>Dried seeds (5-8% moisture) in sealed foil packets or glass jars, freezer (-18°C) or fridge (4°C). Use moisture-proof containers. Thaw to room temperature before opening (prevents condensation). Ideal for seed banking.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h4>Recalcitrant Seeds</h4>
+                    <p>Cannot be stored long-term. Sow fresh, or store moist (not wet) with fungicide in fridge (4°C) for weeks-months (e.g., rainforest species like Nothofagus, Elaeocarpus). Check regularly for mould/germination.</p>
+                </div>
+            </div>
+
+            <h3>Labeling Requirements (Minimum Data)</h3>
+            <div style="background:#1d4e3d; color:white; border-radius:2rem; padding:2rem; font-family:monospace; margin:2rem 0;">
+                <p><i class="fas fa-tag"></i> <strong>Acacia melanoxylon</strong> (Blackwood wattle)</p>
+                <p>Collection date: 26/02/2026 | Collector: J. Smith | Permit: NRE-2026-123</p>
+                <p>Location: Freer Farm, Lutana TAS (GDA2020: 55G 523456 527890) | Altitude: 45m</p>
+                <p>Vegetation community: Wet Eucalypt Forest (WE) | Population size: 50+ plants | Fruit type: B</p>
+                <p>Cleaning method: Sieved (2mm) | Initial weight: 450g | Estimated viability: 70% (cut test)</p>
+                <p>Storage: Airtight glass, 4°C fridge | Expiry: 2028 (retest viability 2027)</p>
+                <p>Notes: Collected from 15 plants, 20% max</p>
+            </div>
+        </div>
+
+        <!-- ===== TAB 7: RISK & WHS ===== -->
+        <div id="tab7" class="tab-content">
+            <!-- (content unchanged) -->
+            <h2>⚠️ Risk Assessment & WHS</h2>
+            
+            <h3>Risk Assessment Matrix (AS/NZS 4360:2021)</h3>
+            <table class="risk-table">
+                <tr><th>Likelihood/Consequence</th><th>1 Insignificant</th><th>2 Minor</th><th>3 Moderate</th><th>4 Major</th><th>5 Catastrophic</th></tr>
+                <tr><td>5 Almost certain</td><td class="risk-medium">H8</td><td class="risk-high">E12</td><td class="risk-high">E16</td><td class="risk-extreme">E20</td><td class="risk-extreme">E25</td></tr>
+                <tr><td>4 Likely</td><td class="risk-medium">M4</td><td class="risk-medium">H8</td><td class="risk-high">E12</td><td class="risk-high">E16</td><td class="risk-extreme">E20</td></tr>
+                <tr><td>3 Possible</td><td class="risk-low">L3</td><td class="risk-medium">M6</td><td class="risk-medium">H9</td><td class="risk-high">E12</td><td class="risk-high">E15</td></tr>
+                <tr><td>2 Unlikely</td><td class="risk-low">L2</td><td class="risk-low">M4</td><td class="risk-medium">M6</td><td class="risk-medium">H8</td><td class="risk-high">E10</td></tr>
+                <tr><td>1 Rare</td><td class="risk-low">L1</td><td class="risk-low">L2</td><td class="risk-low">L3</td><td class="risk-medium">M4</td><td class="risk-medium">H5</td></tr>
+            </table>
+            <p><small>L x C = Risk score (1-25). L=Low, M=Medium, H=High, E=Extreme. Control all risks, escalate Extreme to supervisor.</small></p>
+
+            <h3>Comprehensive Risk Register</h3>
+            <table class="tool-matrix">
+                <tr><th>Hazard</th><th>Initial Risk (LxC)</th><th>Controls</th><th>Residual Risk</th><th>Responsibility</th></tr>
+                <tr><td>Slips/trips – uneven ground, logs, roots</td><td>3x2 = M6</td><td>Maintain 3-point contact, clear path before walking, no running, appropriate footwear (lace-up boots with ankle support), use trekking poles</td><td>2x1 = L2</td><td>All team</td></tr>
+                <tr><td>Manual handling – heavy bags (15kg+)</td><td>4x3 = E12</td><td>Team lifting (2-person for >15kg), weight limits (max 15kg per bag), use wheelbarrow/vehicle for transport, rotate tasks every 30min, warm-up stretches</td><td>2x2 = M4</td><td>Team leader</td></tr>
+                <tr><td>Snake bite (tiger, brown, copperhead)</td><td>2x4 = H8</td><td>PPE (boots, gaiters), scan ground before stepping, use torch in dark, first aid kit with 2x compression bandages, satellite phone/EPIRB, know pressure immobilisation technique</td><td>1x4 = M4</td><td>All team</td></tr>
+                <tr><td>Falling from height (ladder/pole pruner)</td><td>3x4 = E12</td><td>Ladder inspection before use (no damage), 3-point rule, spotter present, only use on firm level ground, harness for >3m, pole pruner: secure footing, clear area below</td><td>2x3 = M6</td><td>Team leader</td></tr>
+                <tr><td>Bites/stings (jack jumper ants, bees, wasps)</td><td>3x2 = M6</td><td>EpiPen if allergic (must disclose), avoid nests, long sleeves/pants, antihistamine in first aid, check area before sitting</td><td>2x2 = M4</td><td>All team</td></tr>
+                <tr><td>Hyperthermia (heat stress)</td><td>3x3 = H9</td><td>Check forecast (avoid >35°C), carry 3L water/person, electrolyte drinks, sunscreen SPF50+, wide-brim hat, long sleeves, frequent breaks in shade</td><td>2x2 = M4</td><td>Team leader</td></tr>
+                <tr><td>Hypothermia (cold/wet)</td><td>3x3 = H9</td><td>Check forecast (avoid <5°C with rain), carry waterproof jacket/pants, thermal layer, emergency blanket, hot drink, know early signs (shivering, confusion)</td><td>2x2 = M4</td><td>All team</td></tr>
+                <tr><td>Bushfire</td><td>2x5 = E10</td><td>Check fire danger rating daily – postpone on High/Extreme/Catastrophic, carry fire blanket, know escape routes, monitor CFA/TFS alerts, carry UHF radio</td><td>1x5 = H5</td><td>Team leader</td></tr>
+                <tr><td>Vehicle accident (4WD tracks)</td><td>3x4 = E12</td><td>Vehicle check (tyres, fuel, recovery gear), 4WD training, recovery points, comms (satellite), drive to conditions, navigation pre-planned, share location</td><td>2x3 = M6</td><td>Driver</td></tr>
+                <tr><td>Remote injury (fracture, bleed)</td><td>3x4 = E12</td><td>First aid trained personnel, comprehensive first aid kit, splints, satellite phone/EPIRB, check-in schedule (2hr), evacuation plan, helicopter landing site identified</td><td>2x3 = M6</td><td>Team leader</td></tr>
+            </table>
+
+            <h3>Emergency Response Plan Template</h3>
+            <div style="background:#f5f9f5; border-radius:2rem; padding:2rem;">
+                <h4>Site-Specific Emergency Plan</h4>
+                <ol>
+                    <li><strong>Emergency contacts:</strong> 000 (police/ambulance), site supervisor: [NAME] [PHONE], nearest hospital: [NAME] [PHONE] [ADDRESS]</li>
+                    <li><strong>First aid:</strong> trained personnel: [NAMES], kit location: [VEHICLE/BACKPACK], snake bite protocol (PIC method – Pressure Immobilisation, keep patient calm, do not wash wound)</li>
+                    <li><strong>Communication:</strong> satellite phone/EPIRB (activate if no mobile signal), check-in schedule (e.g., every 2 hours with base), UHF channel [e.g., 40]</li>
+                    <li><strong>Evacuation:</strong> designated meeting point: [GPS COORDINATES], vehicle extraction points, helicopter landing sites (flat, clear area 30x30m)</li>
+                    <li><strong>Incident reporting:</strong> notify supervisor within 24 hours, complete incident report form, preserve site for investigation if serious</li>
+                    <li><strong>Emergency equipment:</strong> first aid kit, snake bandages, splints, fire blanket, satellite phone, EPIRB, thermal blanket, water</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- ===== TAB 8: QUIZZES & GAMES ===== -->
+        <div id="tab8" class="tab-content">
+            <!-- (content unchanged) -->
+            <h2>🎮 Interactive Knowledge Checks</h2>
+            
+            <div class="quiz-container" id="quizModule">
+                <h3 style="color:white;">Quiz 1: Legislation & Permits</h3>
+                <div class="quiz-question-card" data-correct="B">
+                    <div class="quiz-question">1. According to NRE Tas, when is a permit required for seed collection on private land?</div>
+                    <div class="quiz-option"><input type="radio" name="q1" value="A"> A) Never – private land is exempt</div>
+                    <div class="quiz-option"><input type="radio" name="q1" value="B"> B) If the species is listed as threatened under the Threatened Species Protection Act 1995</div>
+                    <div class="quiz-option"><input type="radio" name="q1" value="C"> C) Only if collecting more than 1kg of seed</div>
+                    <div class="quiz-option"><input type="radio" name="q1" value="D"> D) Always, regardless of species</div>
+                    <div class="quiz-feedback"></div>
+                </div>
+                
+                <h3 style="color:white;">Quiz 2: Sustainable Collection</h3>
+                <div class="quiz-question-card" data-correct="B">
+                    <div class="quiz-question">2. What is the maximum percentage of seed recommended to collect from one plant population?</div>
+                    <div class="quiz-option"><input type="radio" name="q2" value="A"> A) 10%</div>
+                    <div class="quiz-option"><input type="radio" name="q2" value="B"> B) 20%</div>
+                    <div class="quiz-option"><input type="radio" name="q2" value="C"> C) 50%</div>
+                    <div class="quiz-option"><input type="radio" name="q2" value="D"> D) 75%</div>
+                    <div class="quiz-feedback"></div>
+                </div>
+
+                <div class="quiz-question-card" data-correct="C">
+                    <div class="quiz-question">3. Which fruit type typically requires fermentation as part of the cleaning process?</div>
+                    <div class="quiz-option"><input type="radio" name="q3" value="A"> A) Dry dehiscent</div>
+                    <div class="quiz-option"><input type="radio" name="q3" value="B"> B) Dry indehiscent</div>
+                    <div class="quiz-option"><input type="radio" name="q3" value="C"> C) Fleshy (A)</div>
+                    <div class="quiz-option"><input type="radio" name="q3" value="D"> D) All of the above</div>
+                    <div class="quiz-feedback"></div>
+                </div>
+
+                <div class="quiz-question-card" data-correct="B">
+                    <div class="quiz-question">4. What is the recommended equipment for collecting Eucalyptus seed from branches 5m high?</div>
+                    <div class="quiz-option"><input type="radio" name="q4" value="A"> A) Hand picking</div>
+                    <div class="quiz-option"><input type="radio" name="q4" value="B"> B) Pole pruner + ground sheet</div>
+                    <div class="quiz-option"><input type="radio" name="q4" value="C"> C) Vacuum collection</div>
+                    <div class="quiz-option"><input type="radio" name="q4" value="D"> D) Shaking the trunk</div>
+                    <div class="quiz-feedback"></div>
+                </div>
+
+                <div class="quiz-question-card" data-correct="A">
+                    <div class="quiz-question">5. What does 'provenance' refer to in seed collection?</div>
+                    <div class="quiz-option"><input type="radio" name="q5" value="A"> A) The original geographic source/environment of the seed</div>
+                    <div class="quiz-option"><input type="radio" name="q5" value="B"> B) The date seed was collected</div>
+                    <div class="quiz-option"><input type="radio" name="q5" value="C"> C) The cleaning method used</div>
+                    <div class="quiz-option"><input type="radio" name="q5" value="D"> D) The name of the collector</div>
+                    <div class="quiz-feedback"></div>
+                </div>
+
+                <div class="quiz-question-card" data-correct="C">
+                    <div class="quiz-question">6. Which seed type CANNOT be dried and frozen for long-term storage?</div>
+                    <div class="quiz-option"><input type="radio" name="q6" value="A"> A) Orthodox</div>
+                    <div class="quiz-option"><input type="radio" name="q6" value="B"> B) All seeds can be frozen</div>
+                    <div class="quiz-option"><input type="radio" name="q6" value="C"> C) Recalcitrant</div>
+                    <div class="quiz-option"><input type="radio" name="q6" value="D"> D) Serotinous</div>
+                    <div class="quiz-feedback"></div>
+                </div>
+
+                <div class="quiz-question-card" data-correct="D">
+                    <div class="quiz-question">7. Under Tasmanian law, what does the term 'take' include?</div>
+                    <div class="quiz-option"><input type="radio" name="q7" value="A"> A) Collecting seed</div>
+                    <div class="quiz-option"><input type="radio" name="q7" value="B"> B) Damaging a plant</div>
+                    <div class="quiz-option"><input type="radio" name="q7" value="C"> C) Collecting dead wood from reserved land</div>
+                    <div class="quiz-option"><input type="radio" name="q7" value="D"> D) All of the above</div>
+                    <div class="quiz-feedback"></div>
+                </div>
+
+                <button class="btn" onclick="checkAllQuizzes()"><i class="fas fa-check-double"></i> Check All Answers</button>
+                <button class="btn btn-outline" onclick="resetQuizzes()"><i class="fas fa-undo"></i> Reset All Quizzes</button>
+            </div>
+
+            <h3>Fruit Type Matching Game (Drag & Drop)</h3>
+            <div class="game-container">
+                <div class="drag-area">
+                    <h4>Drag these species:</h4>
+                    <div id="draggableItems">
+                        <div class="draggable-item" draggable="true" data-fruit="B" id="drag1">Acacia melanoxylon</div>
+                        <div class="draggable-item" draggable="true" data-fruit="A" id="drag2">Billardiera longiflora</div>
+                        <div class="draggable-item" draggable="true" data-fruit="C" id="drag3">Poa poiformis</div>
+                        <div class="draggable-item" draggable="true" data-fruit="B" id="drag4">Eucalyptus obliqua</div>
+                        <div class="draggable-item" draggable="true" data-fruit="A" id="drag5">Tasmannia lanceolata</div>
+                        <div class="draggable-item" draggable="true" data-fruit="C" id="drag6">Carex appressa</div>
+                        <div class="draggable-item" draggable="true" data-fruit="B" id="drag7">Leptospermum scoparium</div>
+                        <div class="draggable-item" draggable="true" data-fruit="A" id="drag8">Coprosma quadrifida</div>
+                        <div class="draggable-item" draggable="true" data-fruit="C" id="drag9">Gahnia grandis</div>
+                    </div>
+                    <p style="margin-top:1rem;"><small>Drag each species to the correct drop zone below.</small></p>
+                </div>
+                <div class="drop-area">
+                    <h4>Drop zones:</h4>
+                    <div class="drop-zone" id="dropA" data-fruit="A">
+                        <strong>Fleshy Fruits (A)</strong><br>
+                        <div id="droppedA"></div>
+                    </div>
+                    <div class="drop-zone B" id="dropB" data-fruit="B">
+                        <strong>Dry Dehiscent (B)</strong><br>
+                        <div id="droppedB"></div>
+                    </div>
+                    <div class="drop-zone C" id="dropC" data-fruit="C">
+                        <strong>Dry Indehiscent (C)</strong><br>
+                        <div id="droppedC"></div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn" onclick="resetGame()"><i class="fas fa-undo"></i> Reset Game</button>
+            <button class="btn btn-outline" onclick="checkGame()"><i class="fas fa-check"></i> Check My Matches</button>
+            <div id="gameFeedback" style="margin-top:1rem; padding:1rem; border-radius:1rem; display:none;"></div>
+        </div>
+
+        <!-- ===== TAB 9: PRINTABLES ===== -->
+        <div id="tab9" class="tab-content">
+            <!-- (content unchanged) -->
+            <h2>🖨️ Printable Field Tools & Templates</h2>
+            
+            <div class="print-card" style="border:4px solid var(--primary-medium); background:white;">
+                <h4><i class="fas fa-clipboard-list"></i> MASTER FIELD CHECKLIST</h4>
+                <div class="checklist-grid">
+                    <div class="checklist-item"><input type="checkbox"> Permits printed (x3 copies) and laminated</div>
+                    <div class="checklist-item"><input type="checkbox"> Landholder contact details and permission letter</div>
+                    <div class="checklist-item"><input type="checkbox"> Species list with ID photos (laminated)</div>
+                    <div class="checklist-item"><input type="checkbox"> Maps (topographic, satellite, property) printed</div>
+                    <div class="checklist-item"><input type="checkbox"> GPS with waypoints pre-loaded + spare batteries</div>
+                    <div class="checklist-item"><input type="checkbox"> Compass (analogue backup)</div>
+                    <div class="checklist-item"><input type="checkbox"> Flagging tape (biodegradable) – 2 rolls</div>
+                    <div class="checklist-item"><input type="checkbox"> Permanent markers (waterproof, 2x)</div>
+                    <div class="checklist-item"><input type="checkbox"> Paper bags (various sizes: 10x small, 10x medium)</div>
+                    <div class="checklist-item"><input type="checkbox"> Hessian sacks (5x)</div>
+                    <div class="checklist-item"><input type="checkbox"> Secateurs + sharpener + cleaning wipes</div>
+                    <div class="checklist-item"><input type="checkbox"> Pole pruner (checked, rope OK)</div>
+                    <div class="checklist-item"><input type="checkbox"> Tarpaulin (3x3m) with pegs</div>
+                    <div class="checklist-item"><input type="checkbox"> Rope (20m static)</div>
+                    <div class="checklist-item"><input type="checkbox"> First aid kit with snake bandages (2x)</div>
+                    <div class="checklist-item"><input type="checkbox"> EpiPen (if team member allergic)</div>
+                    <div class="checklist-item"><input type="checkbox"> Satellite phone / EPIRB (checked, battery full)</div>
+                    <div class="checklist-item"><input type="checkbox"> Water (3L per person minimum)</div>
+                    <div class="checklist-item"><input type="checkbox"> Food / snacks (high energy)</div>
+                    <div class="checklist-item"><input type="checkbox"> Sunscreen SPF50+ and hat</div>
+                    <div class="checklist-item"><input type="checkbox"> Wet weather gear (jacket, pants)</div>
+                    <div class="checklist-item"><input type="checkbox"> Head torch + spare batteries (2 sets)</div>
+                    <div class="checklist-item"><input type="checkbox"> Camera (or phone with GPS tagging)</div>
+                    <div class="checklist-item"><input type="checkbox"> Notebook and clipboard (waterproof paper)</div>
+                    <div class="checklist-item"><input type="checkbox"> Scales (calibrated, with batteries)</div>
+                    <div class="checklist-item"><input type="checkbox"> Sieves (2mm, 5mm) for cleaning</div>
+                </div>
+            </div>
+
+            <div class="print-card" style="border:4px solid var(--primary-medium); background:white; margin-top:2rem;">
+                <h4><i class="fas fa-file-alt"></i> SEED COLLECTION RECORD (10 species minimum)</h4>
+                <table style="width:100%; border-collapse:collapse;">
+                    <thead><tr><th>#</th><th>Species</th><th>Date</th><th>Location</th><th>GPS (GDA2020)</th><th>Fruit type</th><th>Qty (g)</th><th>Method</th><th>Plants sampled</th></tr></thead>
+                    <tbody>
+                        <tr><td>1</td><td>_________________</td><td>____/____/____</td><td>___________</td><td>___________</td><td>___</td><td>____</td><td>___________</td><td>___</td></tr>
+                        <tr><td>2</td><td>_________________</td><td>____/____/____</td><td>___________</td><td>___________</td><td>___</td><td>____</td><td>___________</td><td>___</td></tr>
+                        <tr><td>3</td><td>_________________</td><td>____/____/____</td><td>___________</td><td>___________</td><td>___</td><td>____</td><td>___________</td><td>___</td></tr>
+                        <tr><td>4</td><td>_________________</td><td>____/____/____</td><td>___________</td><td>___________</td><td>___</td><td>____</td><td>___________</td><td>___</td></tr>
+                        <tr><td>5</td><td>_________________</td><td>____/____/____</td><td>___________</td><td>___________</td><td>___</td><td>____</td><td>___________</td><td>___</td></tr>
+                        <tr><td>6</td><td>_________________</td><td>____/____/____</td><td>___________</td><td>___________</td><td>___</td><td>____</td><td>___________</td><td>___</td></tr>
+                        <tr><td>7</td><td>_________________</td><td>____/____/____</td><td>___________</td><td>___________</td><td>___</td><td>____</td><td>___________</td><td>___</td></tr>
+                        <tr><td>8</td><td>_________________</td><td>____/____/____</td><td>___________</td><td>___________</td><td>___</td><td>____</td><td>___________</td><td>___</td></tr>
+                        <tr><td>9</td><td>_________________</td><td>____/____/____</td><td>___________</td><td>___________</td><td>___</td><td>____</td><td>___________</td><td>___</td></tr>
+                        <tr><td>10</td><td>_________________</td><td>____/____/____</td><td>___________</td><td>___________</td><td>___</td><td>____</td><td>___________</td><td>___</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="print-card" style="border:4px solid var(--primary-medium); background:white; margin-top:2rem;">
+                <h4><i class="fas fa-exclamation-triangle"></i> RISK ASSESSMENT FORM (SITE-SPECIFIC)</h4>
+                <table style="width:100%; border:1px solid black; border-collapse:collapse;">
+                    <tr><th colspan="4" style="background:var(--primary-medium); color:white;">Site: ___________________________ Date: _____________ Assessor: _________________</th></tr>
+                    <tr><th>Hazard</th><th>Initial Risk (LxC)</th><th>Controls</th><th>Residual Risk</th></tr>
+                    <tr><td>_________________</td><td>___ x ___ = ___</td><td>___________________________</td><td>___ x ___ = ___</td></tr>
+                    <tr><td>_________________</td><td>___ x ___ = ___</td><td>___________________________</td><td>___ x ___ = ___</td></tr>
+                    <tr><td>_________________</td><td>___ x ___ = ___</td><td>___________________________</td><td>___ x ___ = ___</td></tr>
+                    <tr><td>_________________</td><td>___ x ___ = ___</td><td>___________________________</td><td>___ x ___ = ___</td></tr>
+                    <tr><td>_________________</td><td>___ x ___ = ___</td><td>___________________________</td><td>___ x ___ = ___</td></tr>
+                </table>
+            </div>
+
+            <div style="display:flex; gap:1rem; margin:2rem 0; flex-wrap:wrap;">
+                <button class="btn" onclick="window.print()"><i class="fas fa-print"></i> Print All Checklists</button>
+                <button class="btn btn-outline" onclick="prepareForExport()"><i class="fas fa-file-pdf"></i> Prepare for PDF Export</button>
+            </div>
+            <p><small>Tip: Use browser Print → 'Save as PDF' for best results. Print layouts are optimised for A4 portrait.</small></p>
+        </div>
+
+        <div id="tab10" class="tab-content" role="tabpanel" aria-labelledby="tab-tab10">
+            <h2><i class="fab fa-youtube" style="color:red;"></i> Seed Collection Video Guide</h2>
+            <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; border-radius:1.5rem; box-shadow:0 20px 30px rgba(0,0,0,0.2); margin:2rem 0;">
+                <iframe style="position:absolute; top:0; left:0; width:100%; height:100%;" src="https://www.youtube.com/embed/F01XSu_U8H4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p style="margin-top:2rem; text-align:center;">
+                <a href="https://www.youtube.com/watch?v=F01XSu_U8H4" target="_blank" class="btn"><i class="fab fa-youtube"></i> Open in YouTube (new tab)</a>
+            </p>
+        </div>
+
+<div id="tab11" class="tab-content" role="tabpanel" aria-labelledby="tab-tab11">
+    <h2><i class="fas fa-images"></i> Seed Collection Photo Gallery</h2>
+    <p><em>Reference images showing seed collection equipment, fruit types, and field techniques. These placeholder images from free sources give you an idea of what to capture when you add your own photos later.</em></p>
+    
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img class="gallery-image" src="https://images.pexels.com/photos/5686179/pexels-photo-5686179.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Fleshy fruits - Billardiera" loading="lazy">
+            <div class="gallery-caption">
+                <h4>Fleshy Fruits (Type A)</h4>
+                <p><em>Billardiera, Coprosma, Tasmannia</em> – require maceration and fermentation to remove pulp. These colourful fruits attract birds for seed dispersal.</p>
+                <div class="photo-credit">Photo: Pexels / cottonbro</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img class="gallery-image" src="https://images.pexels.com/photos/2478518/pexels-photo-2478518.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Eucalyptus seed capsules" loading="lazy">
+            <div class="gallery-caption">
+                <h4>Dry Dehiscent (Type B)</h4>
+                <p><em>Eucalyptus, Acacia, Leptospermum</em> – woody capsules or pods that open to release seeds. Eucalypt capsules require oven heating (50-70°C) to extract seed.</p>
+                <div class="photo-credit">Photo: Pexels / Pixabay</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img class="gallery-image" src="https://images.pexels.com/photos/1324296/pexels-photo-1324296.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Grass seeds - Type C" loading="lazy">
+            <div class="gallery-caption">
+                <h4>Dry Indehiscent (Type C)</h4>
+                <p><em>Poa, Carex, Lomandra</em> – grasses and sedges with seeds that remain inside the fruit. Require sieving and winnowing to separate from chaff.</p>
+                <div class="photo-credit">Photo: Pexels / Pixabay</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img class="gallery-image" src="https://images.pexels.com/photos/257558/pexels-photo-257558.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Banksia cone serotinous" loading="lazy">
+            <div class="gallery-caption">
+                <h4>Serotinous Fruits</h4>
+                <p><em>Banksia, Hakea</em> – woody cones that require heat (fire) to open and release seeds. A classic example of fire-adapted seed release.</p>
+                <div class="photo-credit">Photo: Pexels / Pixabay</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img class="gallery-image" src="https://images.pexels.com/photos/1639729/pexels-photo-1639729.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Acacia seed pods" loading="lazy">
+            <div class="gallery-caption">
+                <h4>Legume Pods (Acacia)</h4>
+                <p><em>Acacia melanoxylon, A. verticillata</em> – dry dehiscent pods that split open along two seams to release hard-coated seeds.</p>
+                <div class="photo-credit">Photo: Pexels / Pixabay</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img class="gallery-image" src="https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pole pruner collection" loading="lazy">
+            <div class="gallery-caption">
+                <h4>Pole Pruner Collection</h4>
+                <p>Extendable pruner with rope mechanism for reaching high branches. Essential for collecting from tall eucalypts and rainforest trees. Always use with tarp and spotter.</p>
+                <div class="photo-credit">Photo: Pexels / Tom Fisk</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img class="gallery-image" src="https://images.pexels.com/photos/158106/agriculture-grain-harvest-wheat-158106.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Seed cleaning sieves" loading="lazy">
+            <div class="gallery-caption">
+                <h4>Seed Cleaning Sieves</h4>
+                <p>Graded sieves (2mm, 5mm) for separating seed from chaff. Essential for grass and sedge species (Type C). Stack multiple sizes for efficient cleaning.</p>
+                <div class="photo-credit">Photo: Pexels / Pixabay</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img class="gallery-image" src="https://images.pexels.com/photos/4198021/pexels-photo-4198021.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Field data recording" loading="lazy">
+            <div class="gallery-caption">
+                <h4>Field Data Recording</h4>
+                <p>Accurate records of location (GPS coordinates), date, species, and quantity are essential for provenance tracking and permit compliance.</p>
+                <div class="photo-credit">Photo: Pexels / Karolina Grabowska</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img class="gallery-image" src="https://images.pexels.com/photos/6697305/pexels-photo-6697305.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Seed drying" loading="lazy">
+            <div class="gallery-caption">
+                <h4>Seed Drying</h4>
+                <p>Spread seeds in single layer on newspaper or trays for air drying. Critical step before storage to achieve correct moisture content (5-8% for orthodox seeds).</p>
+                <div class="photo-credit">Photo: Pexels / cottonbro</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img class="gallery-image" src="https://images.pexels.com/photos/3653840/pexels-photo-3653840.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Seed storage" loading="lazy">
+            <div class="gallery-caption">
+                <h4>Seed Storage</h4>
+                <p>Airtight glass containers with silica gel packets for short-term storage. For long-term storage, dried seeds go in sealed foil packets in freezer (-18°C).</p>
+                <div class="photo-credit">Photo: Pexels / Julia Filirovska</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img class="gallery-image" src="https://images.pexels.com/photos/1068770/pexels-photo-1068770.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Seed viability testing" loading="lazy">
+            <div class="gallery-caption">
+                <h4>Viability Testing</h4>
+                <p>Cut test: dissecting seeds to examine embryo health. White/cream firm embryos indicate viable seeds; discoloured or shrivelled indicate non-viable.</p>
+                <div class="photo-credit">Photo: Pexels / Kaboompics</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img class="gallery-image" src="https://images.pexels.com/photos/711419/pexels-photo-711419.jpeg?auto=compress&cs=tinysrgb&w=600" alt="GPS field navigation" loading="lazy">
+            <div class="gallery-caption">
+                <h4>GPS Navigation</h4>
+                <p>Pre-load waypoints for collection sites, mark plant locations, and record coordinates in GDA2020 format for permit reporting.</p>
+                <div class="photo-credit">Photo: Pexels / Pixabay</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background:#fff2db; border-radius:1.5rem; padding:1.5rem; margin:2rem 0;">
+        <h3>📸 Photo Guide: What to Capture for Your Own Gallery</h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:1.5rem;">
+            <div>
+                <h5><i class="fas fa-tree"></i> Plant Level</h5>
+                <ul style="list-style:none; padding-left:0;">
+                    <li>✓ Whole plant/habitat</li>
+                    <li>✓ Bark/trunk features</li>
+                    <li>✓ Growth form</li>
+                    <li>✓ Population context</li>
+                </ul>
+            </div>
+            <div>
+                <h5><i class="fas fa-leaf"></i> Diagnostic Features</h5>
+                <ul style="list-style:none; padding-left:0;">
+                    <li>✓ Leaves (upper/lower)</li>
+                    <li>✓ Flowers (close-up)</li>
+                    <li>✓ Fruits/seed pods</li>
+                    <li>✓ Seeds (macro)</li>
+                </ul>
+            </div>
+            <div>
+                <h5><i class="fas fa-clipboard"></i> Collection Process</h5>
+                <ul style="list-style:none; padding-left:0;">
+                    <li>✓ Equipment setup</li>
+                    <li>✓ Collection technique</li>
+                    <li>✓ Cleaning process</li>
+                    <li>✓ Storage containers</li>
+                </ul>
+            </div>
+        </div>
+        <p style="margin-top:1rem;"><i class="fas fa-camera"></i> <strong>Tip:</strong> To replace these placeholder images with your own photos, simply change the <code>src</code> attribute in each <code>&lt;img&gt;</code> tag to point to your image file. Use descriptive filenames and update the captions to match your specific species.</p>
+    </div>
+</div>
+
+<div id="tab12" class="tab-content" role="tabpanel" aria-labelledby="tab-tab12">
+    <h2><i class="fas fa-book-open"></i> Interactive Glossary</h2>
+    <p>Hover over any <span class="glossary-term">highlighted term<span class="glossary-definition">Terms like this one will show a definition when you hover.</span></span> to see its definition. Terms are organised by category for easy reference.</p>
+    
+    <div style="background:var(--bg-light); border-radius:1.5rem; padding:1.5rem; margin:2rem 0;">
+        <h3>🌱 Seed Biology & Structure</h3>
+        <p>
+            <span class="glossary-term">Cotyledon<span class="glossary-definition">The embryonic first leaves of a seed; they store food (in dicots) or absorb endosperm (in monocots). Number of cotyledons distinguishes monocots (1) from dicots (2).</span></span> · 
+            <span class="glossary-term">Radicle<span class="glossary-definition">The embryonic root that emerges first during germination; develops into the primary root system.</span></span> · 
+            <span class="glossary-term">Plumule<span class="glossary-definition">The embryonic shoot (stem and first true leaves) above the cotyledons.</span></span> · 
+            <span class="glossary-term">Endosperm<span class="glossary-definition">Nutritive tissue inside seeds that provides energy for germination; may be absorbed by cotyledons before germination (in some species).</span></span> · 
+            <span class="glossary-term">Hilum<span class="glossary-definition">The scar on the seed coat where it was attached to the ovary wall; often visible as a distinct mark or colour change.</span></span> · 
+            <span class="glossary-term">Micropyle<span class="glossary-definition">A tiny opening in the seed coat through which water enters to initiate germination; originally the site of pollen tube entry.</span></span> · 
+            <span class="glossary-term">Testa<span class="glossary-definition">The hard outer seed coat that protects the embryo; may be thin (e.g., Acacia) or thick and woody (e.g., Banksia).</span></span> · 
+            <span class="glossary-term">Aril<span class="glossary-definition">A fleshy, often brightly coloured structure attached to the seed; attracts birds for dispersal (e.g., native currant).</span></span>
+        </p>
+
+        <h3>💧 Seed Storage Behaviour</h3>
+        <p>
+            <span class="glossary-term">Orthodox seed<span class="glossary-definition">Seeds that can be dried to low moisture content (5-8%) and frozen for long-term storage. Most Australian native seeds are orthodox (e.g., Eucalyptus, Acacia).</span></span> · 
+            <span class="glossary-term">Recalcitrant seed<span class="glossary-definition">Seeds that cannot be dried or frozen; they remain high in moisture (30-70%) and must be sown fresh or stored short-term in moist conditions. Examples: rainforest species like Nothofagus, Elaeocarpus, Araucaria.</span></span> · 
+            <span class="glossary-term">Intermediate seed<span class="glossary-definition">Seeds with storage behaviour between orthodox and recalcitrant; can tolerate some drying but not freezing. May survive 1-5 years in cool, dry conditions.</span></span> · 
+            <span class="glossary-term">Desiccation tolerance<span class="glossary-definition">A seed's ability to survive extreme drying without losing viability; orthodox seeds have high desiccation tolerance.</span></span>
+        </p>
+
+        <h3>⏰ Dormancy & Germination</h3>
+        <p>
+            <span class="glossary-term">Dormancy<span class="glossary-definition">A state in which viable seeds fail to germinate even under favourable conditions; an evolutionary adaptation to survive adverse periods.</span></span> · 
+            <span class="glossary-term">Physical dormancy<span class="glossary-definition">Seed coat is impermeable to water; requires scarification (scratching, hot water, fire) to break dormancy. Common in Fabaceae (pea family).</span></span> · 
+            <span class="glossary-term">Physiological dormancy<span class="glossary-definition">Internal chemical inhibitors prevent germination; requires stratification (cold or warm treatment) to break. Common in many temperate species.</span></span> · 
+            <span class="glossary-term">Morphological dormancy<span class="glossary-definition">Embryo is underdeveloped at seed dispersal and needs time to grow inside the seed before germination can occur.</span></span> · 
+            <span class="glossary-term">Stratification<span class="glossary-definition">Cold treatment (usually 1-3 months at 2-5°C) to break physiological dormancy; mimics winter conditions. Also called cold stratification.</span></span> · 
+            <span class="glossary-term">Warm stratification<span class="glossary-definition">Exposure to warm temperatures (20-30°C) to break dormancy in some species; often followed by cold stratification for double dormancy.</span></span> · 
+            <span class="glossary-term">Scarification<span class="glossary-definition">Any treatment that breaks or weakens the seed coat to allow water imbibition. Methods include mechanical (nicking, sandpaper), thermal (hot water, fire), or chemical (acid).</span></span> · 
+            <span class="glossary-term">Vernalization<span class="glossary-definition">Cold treatment applied to imbibed seeds or seedlings to induce flowering in biennial plants; different from stratification which promotes germination.</span></span> · 
+            <span class="glossary-term">After-ripening<span class="glossary-definition">A period of dry storage at room temperature that allows seeds to overcome dormancy; required for many grass species and Asteraceae.</span></span> · 
+            <span class="glossary-term">Smoke germination<span class="glossary-definition">Germination triggered by smoke or smoke-water chemicals (karrikins); essential for many Australian fire-adapted species (e.g., Stylidium, Actinotus).</span></span> · 
+            <span class="glossary-term">Heat shock<span class="glossary-definition">Brief exposure to high temperatures (40-100°C) that breaks physical dormancy in hard-seeded species; mimics soil heating during fire.</span></span>
+        </p>
+
+        <h3>🌿 Fruit & Seed Dispersal</h3>
+        <p>
+            <span class="glossary-term">Dehiscent<span class="glossary-definition">Seed pods or capsules that open naturally when ripe to release seeds. Common in Type B fruits (Acacia, Eucalyptus, pea family).</span></span> · 
+            <span class="glossary-term">Indehiscent<span class="glossary-definition">Fruits that do not open to release seeds; seeds are dispersed while still inside the fruit. Common in Type C fruits (grasses, sedges, daisy family).</span></span> · 
+            <span class="glossary-term">Serotinous<span class="glossary-definition">Capsules or cones that require heat (typically from bushfire) to open and release seeds. Seeds are held in woody fruits for years until fire triggers release. Examples: Banksia, Hakea, some Eucalypts.</span></span> · 
+            <span class="glossary-term">Pyriscence<span class="glossary-definition">The scientific term for fire-triggered seed release; from Greek 'pyr' (fire). Often confused with serotiny.</span></span> · 
+            <span class="glossary-term">Myrmecochory<span class="glossary-definition">Seed dispersal by ants. Seeds have elaiosomes (fatty appendages) that attract ants; ants carry seeds to nests, eat elaiosome, and discard viable seed. Common in Acacia, Pultenaea.</span></span> · 
+            <span class="glossary-term">Elaiosome<span class="glossary-definition">A fleshy, lipid-rich structure attached to seeds that attracts ants; removed by ants without damaging the seed. Also called an ant attractant.</span></span> · 
+            <span class="glossary-term">Ornithochory<span class="glossary-definition">Seed dispersal by birds; typically involves fleshy fruits (Type A) with colourful arils or pulp. Birds eat fruit and pass viable seeds.</span></span> · 
+            <span class="glossary-term">Anemochory<span class="glossary-definition">Wind dispersal; seeds often have wings (e.g., Eucalyptus), plumes (e.g., Clematis), or are tiny dust seeds (e.g., orchids).</span></span> · 
+            <span class="glossary-term">Hydrochory<span class="glossary-definition">Water dispersal; seeds float and are carried by water currents. Common in riparian and coastal species (e.g., mangroves, Melaleuca).</span></span> · 
+            <span class="glossary-term">Synaptospermy<span class="glossary-definition">Dispersal of multiple seeds together as a unit (e.g., whole grass spikelet).</span></span>
+        </p>
+
+        <h3>📊 Seed Quality & Testing</h3>
+        <p>
+            <span class="glossary-term">Viability<span class="glossary-definition">The percentage of seeds in a lot that are alive and capable of germinating under suitable conditions. Tested via cut test, tetrazolium (TZ) test, or germination trial.</span></span> · 
+            <span class="glossary-term">Tetrazolium test (TZ)<span class="glossary-definition">A biochemical viability test using colourless tetrazolium salt; living embryos turn red, dead tissue remains unstained. Results in 24-48 hours.</span></span> · 
+            <span class="glossary-term">Cut test<span class="glossary-definition">Quick field method to estimate viability: cut seeds open and inspect embryos. Firm, white/cream embryos indicate viable; soft, discoloured, or shrivelled indicate non-viable.</span></span> · 
+            <span class="glossary-term">Float test<span class="glossary-definition">Seeds placed in water; viable seeds often sink, non-viable float. Not reliable for all species (some viable seeds float due to air spaces).</span></span> · 
+            <span class="glossary-term">Germination test<span class="glossary-definition">Controlled germination trial under optimal conditions (light, temperature, moisture). Most accurate but slow (weeks to months).</span></span> · 
+            <span class="glossary-term">Purity<span class="glossary-definition">Percentage of pure seed (by weight) in a seed lot, excluding chaff, soil, inert matter, and other species.</span></span> · 
+            <span class="glossary-term">Moisture content<span class="glossary-definition">Amount of water in seeds, expressed as percentage of fresh weight or dry weight. Critical for determining storage method.</span></span> · 
+            <span class="glossary-term">Thousand seed weight (TSW)<span class="glossary-definition">Weight of 1000 seeds; used to estimate seed quantity, compare seed size between lots/species.</span></span> · 
+            <span class="glossary-term">Seed lot<span class="glossary-definition">A collection of seeds of a single species collected from the same location, same date, same population.</span></span>
+        </p>
+
+        <h3>🧬 Genetics & Provenance</h3>
+        <p>
+            <span class="glossary-term">Provenance<span class="glossary-definition">The original geographic source or environment of a seed lot; critical for restoration success. Using local provenance seed increases survival rates by up to 300%.</span></span> · 
+            <span class="glossary-term">Local provenance<span class="glossary-definition">Seed collected from the same or similar environmental conditions (rainfall, soil, altitude) as the planting site.</span></span> · 
+            <span class="glossary-term">Climate-adjusted provenancing<span class="glossary-definition">Modern approach collecting from slightly warmer/drier areas to future-proof restoration against climate change.</span></span> · 
+            <span class="glossary-term">Seed transfer zone<span class="glossary-definition">Geographic area within which seed can be moved with minimal risk of maladaptation; based on climate, soil, and bioregions.</span></span> · 
+            <span class="glossary-term">Population bottleneck<span class="glossary-definition">Reduction in genetic diversity when too few parent plants are sampled; avoid by collecting from 20-50 plants.</span></span> · 
+            <span class="glossary-term">Inbreeding depression<span class="glossary-definition">Reduced fitness in offspring due to mating between related individuals; risk increases if seed collected from too few plants.</span></span> · 
+            <span class="glossary-term">Genetic drift<span class="glossary-definition">Random changes in gene frequencies in small populations; collecting from small populations can capture these random variations.</span></span>
+        </p>
+
+        <h3>📝 Collection & Field Terms</h3>
+        <p>
+            <span class="glossary-term">Phenology<span class="glossary-definition">The study of cyclic and seasonal natural phenomena, especially in relation to climate and plant life. Critical for timing seed collection.</span></span> · 
+            <span class="glossary-term">Maturation date<span class="glossary-definition">The date when seeds reach physiological maturity and are ready for collection; varies by species, altitude, seasonal conditions.</span></span> · 
+            <span class="glossary-term">Seed crop<span class="glossary-definition">The total amount of seed produced by a population in a given season; varies annually (mast seeding years vs. low years).</span></span> · 
+            <span class="glossary-term">Mast seeding<span class="glossary-definition">Synchronous, highly variable seed production across years; some years have massive seed crops, others very little. Common in Eucalyptus, Nothofagus.</span></span> · 
+            <span class="glossary-term">Voucher specimen<span class="glossary-definition">Pressed plant sample with flowers/fruits deposited in a herbarium to verify species identification. Essential for uncertain species.</span></span> · 
+            <span class="glossary-term">Flagging tape<span class="glossary-definition">Coloured tape (biodegradable preferred) used to mark collection plants for later return; remove after collection.</span></span> · 
+            <span class="glossary-term">Thresh<span class="glossary-definition">The process of beating or rubbing dried fruits to separate seeds from pods/capsules.</span></span> · 
+            <span class="glossary-term">Winnow<span class="glossary-definition">Using air flow to separate lighter chaff from heavier seeds; can be done with wind, fans, or seed blowers.</span></span> · 
+            <span class="glossary-term">Dieback<span class="glossary-definition">Disease causing plant decline and death; Phytophthora cinnamomi (root rot) is a major threat in Australian ecosystems.</span></span>
+        </p>
+
+        <h3>⚖️ Legal & Conservation Terms</h3>
+        <p>
+            <span class="glossary-term">Take (legal)<span class="glossary-definition">Under Tasmanian legislation, includes collecting, damaging, destroying, or interfering with native plants or plant parts on reserved land or for threatened species.</span></span> · 
+            <span class="glossary-term">Threatened species<span class="glossary-definition">Plant or animal species listed as endangered, vulnerable, or rare under state or Commonwealth legislation. Collection requires a permit regardless of land tenure.</span></span> · 
+            <span class="glossary-term">Endangered<span class="glossary-definition">Species facing a very high risk of extinction in the wild in the near future.</span></span> · 
+            <span class="glossary-term">Vulnerable<span class="glossary-definition">Species facing a high risk of extinction in the wild in the medium-term future.</span></span> · 
+            <span class="glossary-term">Rare<span class="glossary-definition">Species with small populations that are not currently endangered or vulnerable but are at risk.</span></span> · 
+            <span class="glossary-term">EPBC Act<span class="glossary-definition">Environment Protection and Biodiversity Conservation Act 1999 (Commonwealth); Australia's key environmental legislation covering Matters of National Environmental Significance.</span></span> · 
+            <span class="glossary-term">Biosecurity<span class="glossary-definition">Practices to prevent the spread of pests and diseases between sites – includes cleaning tools, footwear, and vehicles with 70% ethanol or 1% bleach.</span></span> · 
+            <span class="glossary-term">Phytophthora<span class="glossary-definition">Phytophthora cinnamomi – a deadly soil-borne pathogen (root rot) that kills many native plants. Spread by soil movement; requires strict hygiene protocols.</span></span> · 
+            <span class="glossary-term">Myrtle rust<span class="glossary-definition">Austropuccinia psidii – a fungal disease affecting Myrtaceae family (eucalypts, melaleucas, leptospermum). Reportable disease.</span></span>
+        </p>
+
+        <h3>🏞️ Habitat & Ecological Terms</h3>
+        <p>
+            <span class="glossary-term">Riparian<span class="glossary-definition">Relating to wetlands, riverbanks, and streamside vegetation; often has different collection and access restrictions.</span></span> · 
+            <span class="glossary-term">Sclerophyll<span class="glossary-definition">Vegetation with hard, leathery leaves adapted to dry conditions; includes dry sclerophyll (open forest) and wet sclerophyll (tall open forest).</span></span> · 
+            <span class="glossary-term">Heathland<span class="glossary-definition">Vegetation dominated by small-leaved shrubs on nutrient-poor soils; often rich in biodiversity.</span></span> · 
+            <span class="glossary-term">Ecotone<span class="glossary-definition">Transition zone between two vegetation communities; often has high species diversity.</span></span> · 
+            <span class="glossary-term">Remnant vegetation<span class="glossary-definition">Native vegetation remaining after clearing; often isolated patches in agricultural or urban landscapes.</span></span> · 
+            <span class="glossary-term">Corridor<span class="glossary-definition">Strips of native vegetation connecting larger habitat areas; critical for wildlife movement and gene flow.</span></span>
+        </p>
+    </div>
+
+    <h3>📚 Complete A–Z Glossary</h3>
+    <table class="tool-matrix">
+        <tr><th style="width:200px;">Term</th><th>Definition</th></tr>
+        <tr><td><strong>After-ripening</strong></td><td>A period of dry storage at room temperature that allows seeds to overcome dormancy; required for many grass species and Asteraceae.</td></tr>
+        <tr><td><strong>Anemochory</strong></td><td>Wind dispersal; seeds often have wings (e.g., Eucalyptus), plumes (e.g., Clematis), or are tiny dust seeds (e.g., orchids).</td></tr>
+        <tr><td><strong>Aril</strong></td><td>A fleshy, often brightly coloured structure attached to the seed; attracts birds for dispersal (e.g., native currant, billardiera).</td></tr>
+        <tr><td><strong>Biosecurity</strong></td><td>Practices to prevent the spread of pests and diseases between sites – includes cleaning tools, footwear, and vehicles with 70% ethanol or 1% bleach. Critical for preventing Phytophthora spread.</td></tr>
+        <tr><td><strong>Climate-adjusted provenancing</strong></td><td>Modern approach collecting from slightly warmer/drier areas to future-proof restoration against climate change.</td></tr>
+        <tr><td><strong>Cotyledon</strong></td><td>The embryonic first leaves of a seed; they store food (in dicots) or absorb endosperm (in monocots). Number distinguishes monocots (1) from dicots (2).</td></tr>
+        <tr><td><strong>Cut test</strong></td><td>Quick field method to estimate viability: cut seeds open and inspect embryos. Firm, white/cream embryos indicate viable; soft, discoloured, or shrivelled indicate non-viable.</td></tr>
+        <tr><td><strong>Dehiscent</strong></td><td>Seed pods or capsules that open naturally when ripe to release seeds. Common in Type B fruits (Acacia, Eucalyptus, pea family).</td></tr>
+        <tr><td><strong>Desiccation tolerance</strong></td><td>A seed's ability to survive extreme drying without losing viability; orthodox seeds have high desiccation tolerance.</td></tr>
+        <tr><td><strong>Dieback</strong></td><td>Disease causing plant decline and death; Phytophthora cinnamomi (root rot) is a major threat in Australian ecosystems.</td></tr>
+        <tr><td><strong>Dormancy</strong></td><td>A state in which viable seeds fail to germinate even under favourable conditions; an evolutionary adaptation to survive adverse periods.</td></tr>
+        <tr><td><strong>Ecotone</strong></td><td>Transition zone between two vegetation communities; often has high species diversity.</td></tr>
+        <tr><td><strong>Elaiosome</strong></td><td>A fleshy, lipid-rich structure attached to seeds that attracts ants; removed by ants without damaging the seed. Also called an ant attractant.</td></tr>
+        <tr><td><strong>Endangered</strong></td><td>Species facing a very high risk of extinction in the wild in the near future under state or Commonwealth legislation.</td></tr>
+        <tr><td><strong>Endosperm</strong></td><td>Nutritive tissue inside seeds that provides energy for germination; may be absorbed by cotyledons before germination (in some species).</td></tr>
+        <tr><td><strong>EPBC Act</strong></td><td>Environment Protection and Biodiversity Conservation Act 1999 (Commonwealth); Australia's key environmental legislation covering Matters of National Environmental Significance.</td></tr>
+        <tr><td><strong>Flagging tape</strong></td><td>Coloured tape (biodegradable preferred) used to mark collection plants for later return; remove after collection.</td></tr>
+        <tr><td><strong>Float test</strong></td><td>Seeds placed in water; viable seeds often sink, non-viable float. Not reliable for all species (some viable seeds float due to air spaces).</td></tr>
+        <tr><td><strong>Genetic drift</strong></td><td>Random changes in gene frequencies in small populations; collecting from small populations can capture these random variations.</td></tr>
+        <tr><td><strong>Germination test</strong></td><td>Controlled germination trial under optimal conditions (light, temperature, moisture). Most accurate but slow (weeks to months).</td></tr>
+        <tr><td><strong>Heat shock</strong></td><td>Brief exposure to high temperatures (40-100°C) that breaks physical dormancy in hard-seeded species; mimics soil heating during fire.</td></tr>
+        <tr><td><strong>Heathland</strong></td><td>Vegetation dominated by small-leaved shrubs on nutrient-poor soils; often rich in biodiversity.</td></tr>
+        <tr><td><strong>Hilum</strong></td><td>The scar on the seed coat where it was attached to the ovary wall; often visible as a distinct mark or colour change.</td></tr>
+        <tr><td><strong>Hydrochory</strong></td><td>Water dispersal; seeds float and are carried by water currents. Common in riparian and coastal species (e.g., mangroves, Melaleuca).</td></tr>
+        <tr><td><strong>Inbreeding depression</strong></td><td>Reduced fitness in offspring due to mating between related individuals; risk increases if seed collected from too few plants.</td></tr>
+        <tr><td><strong>Indehiscent</strong></td><td>Fruits that do not open to release seeds; seeds are dispersed while still inside the fruit. Common in Type C fruits (grasses, sedges, daisy family).</td></tr>
+        <tr><td><strong>Intermediate seed</strong></td><td>Seeds with storage behaviour between orthodox and recalcitrant; can tolerate some drying but not freezing. May survive 1-5 years in cool, dry conditions.</td></tr>
+        <tr><td><strong>Local provenance</strong></td><td>Seed collected from the same or similar environmental conditions (rainfall, soil, altitude) as the planting site.</td></tr>
+        <tr><td><strong>Mast seeding</strong></td><td>Synchronous, highly variable seed production across years; some years have massive seed crops, others very little. Common in Eucalyptus, Nothofagus.</td></tr>
+        <tr><td><strong>Maturation date</strong></td><td>The date when seeds reach physiological maturity and are ready for collection; varies by species, altitude, seasonal conditions.</td></tr>
+        <tr><td><strong>Micropyle</strong></td><td>A tiny opening in the seed coat through which water enters to initiate germination; originally the site of pollen tube entry.</td></tr>
+        <tr><td><strong>Moisture content</strong></td><td>Amount of water in seeds, expressed as percentage of fresh weight or dry weight. Critical for determining storage method.</td></tr>
+        <tr><td><strong>Morphological dormancy</strong></td><td>Embryo is underdeveloped at seed dispersal and needs time to grow inside the seed before germination can occur.</td></tr>
+        <tr><td><strong>Myrmecochory</strong></td><td>Seed dispersal by ants. Seeds have elaiosomes (fatty appendages) that attract ants; ants carry seeds to nests, eat elaiosome, and discard viable seed.</td></tr>
+        <tr><td><strong>Myrtle rust</strong></td><td>Austropuccinia psidii – a fungal disease affecting Myrtaceae family (eucalypts, melaleucas, leptospermum). Reportable disease.</td></tr>
+        <tr><td><strong>Ornithochory</strong></td><td>Seed dispersal by birds; typically involves fleshy fruits (Type A) with colourful arils or pulp. Birds eat fruit and pass viable seeds.</td></tr>
+        <tr><td><strong>Orthodox seed</strong></td><td>Seeds that can be dried to low moisture content (5-8%) and frozen for long-term storage. Most Australian native seeds are orthodox (e.g., Eucalyptus, Acacia).</td></tr>
+        <tr><td><strong>Phenology</strong></td><td>The study of cyclic and seasonal natural phenomena, especially in relation to climate and plant life. Critical for timing seed collection.</td></tr>
+        <tr><td><strong>Physical dormancy</strong></td><td>Seed coat is impermeable to water; requires scarification (scratching, hot water, fire) to break dormancy. Common in Fabaceae (pea family).</td></tr>
+        <tr><td><strong>Physiological dormancy</strong></td><td>Internal chemical inhibitors prevent germination; requires stratification (cold or warm treatment) to break. Common in many temperate species.</td></tr>
+        <tr><td><strong>Phytophthora</strong></td><td>Phytophthora cinnamomi – a deadly soil-borne pathogen (root rot) that kills many native plants. Spread by soil movement; requires strict hygiene protocols.</td></tr>
+        <tr><td><strong>Plumule</strong></td><td>The embryonic shoot (stem and first true leaves) above the cotyledons.</td></tr>
+        <tr><td><strong>Population bottleneck</strong></td><td>Reduction in genetic diversity when too few parent plants are sampled; avoid by collecting from 20-50 plants.</td></tr>
+        <tr><td><strong>Provenance</strong></td><td>The original geographic source or environment of a seed lot; critical for restoration success. Using local provenance seed increases survival rates by up to 300%.</td></tr>
+        <tr><td><strong>Purity</strong></td><td>Percentage of pure seed (by weight) in a seed lot, excluding chaff, soil, inert matter, and other species.</td></tr>
+        <tr><td><strong>Pyriscence</strong></td><td>The scientific term for fire-triggered seed release; from Greek 'pyr' (fire). Often confused with serotiny.</td></tr>
+        <tr><td><strong>Radicle</strong></td><td>The embryonic root that emerges first during germination; develops into the primary root system.</td></tr>
+        <tr><td><strong>Rare</strong></td><td>Species with small populations that are not currently endangered or vulnerable but are at risk under state legislation.</td></tr>
+        <tr><td><strong>Recalcitrant seed</strong></td><td>Seeds that cannot be dried or frozen; they remain high in moisture (30-70%) and must be sown fresh or stored short-term in moist conditions. Examples: rainforest species like Nothofagus, Elaeocarpus.</td></tr>
+        <tr><td><strong>Remnant vegetation</strong></td><td>Native vegetation remaining after clearing; often isolated patches in agricultural or urban landscapes.</td></tr>
+        <tr><td><strong>Riparian</strong></td><td>Relating to wetlands, riverbanks, and streamside vegetation; often has different collection and access restrictions.</td></tr>
+        <tr><td><strong>Scarification</strong></td><td>Any treatment that breaks or weakens the seed coat to allow water imbibition. Methods include mechanical (nicking, sandpaper), thermal (hot water, fire), or chemical (acid).</td></tr>
+        <tr><td><strong>Sclerophyll</strong></td><td>Vegetation with hard, leathery leaves adapted to dry conditions; includes dry sclerophyll (open forest) and wet sclerophyll (tall open forest).</td></tr>
+        <tr><td><strong>Seed crop</strong></td><td>The total amount of seed produced by a population in a given season; varies annually (mast seeding years vs. low years).</td></tr>
+        <tr><td><strong>Seed lot</strong></td><td>A collection of seeds of a single species collected from the same location, same date, same population.</td></tr>
+        <tr><td><strong>Seed transfer zone</strong></td><td>Geographic area within which seed can be moved with minimal risk of maladaptation; based on climate, soil, and bioregions.</td></tr>
+        <tr><td><strong>Serotinous</strong></td><td>Capsules or cones that require heat (typically from bushfire) to open and release seeds. Seeds are held in woody fruits for years until fire triggers release. Examples: Banksia, Hakea, some Eucalypts.</td></tr>
+        <tr><td><strong>Smoke germination</strong></td><td>Germination triggered by smoke or smoke-water chemicals (karrikins); essential for many Australian fire-adapted species (e.g., Stylidium, Actinotus).</td></tr>
+        <tr><td><strong>Stratification</strong></td><td>Cold treatment (usually 1-3 months at 2-5°C) to break physiological dormancy; mimics winter conditions. Also called cold stratification.</td></tr>
+        <tr><td><strong>Synaptospermy</strong></td><td>Dispersal of multiple seeds together as a unit (e.g., whole grass spikelet).</td></tr>
+        <tr><td><strong>Take (legal)</strong></td><td>Under Tasmanian legislation, includes collecting, damaging, destroying, or interfering with native plants or plant parts on reserved land or for threatened species.</td></tr>
+        <tr><td><strong>Testa</strong></td><td>The hard outer seed coat that protects the embryo; may be thin (e.g., Acacia) or thick and woody (e.g., Banksia).</td></tr>
+        <tr><td><strong>Tetrazolium test (TZ)</strong></td><td>A biochemical viability test using colourless tetrazolium salt; living embryos turn red, dead tissue remains unstained. Results in 24-48 hours.</td></tr>
+        <tr><td><strong>Thousand seed weight (TSW)</strong></td><td>Weight of 1000 seeds; used to estimate seed quantity, compare seed size between lots/species.</td></tr>
+        <tr><td><strong>Threatened species</strong></td><td>Plant or animal species listed as endangered, vulnerable, or rare under state or Commonwealth legislation. Collection requires a permit regardless of land tenure.</td></tr>
+        <tr><td><strong>Thresh</strong></td><td>The process of beating or rubbing dried fruits to separate seeds from pods/capsules.</td></tr>
+        <tr><td><strong>Vernalization</strong></td><td>Cold treatment applied to imbibed seeds or seedlings to induce flowering in biennial plants; different from stratification which promotes germination.</td></tr>
+        <tr><td><strong>Viability</strong></td><td>The percentage of seeds in a lot that are alive and capable of germinating under suitable conditions. Tested via cut test, tetrazolium (TZ) test, or germination trial.</td></tr>
+        <tr><td><strong>Voucher specimen</strong></td><td>Pressed plant sample with flowers/fruits deposited in a herbarium to verify species identification. Essential for uncertain species.</td></tr>
+        <tr><td><strong>Vulnerable</strong></td><td>Species facing a high risk of extinction in the wild in the medium-term future under state or Commonwealth legislation.</td></tr>
+        <tr><td><strong>Warm stratification</strong></td><td>Exposure to warm temperatures (20-30°C) to break dormancy in some species; often followed by cold stratification for double dormancy.</td></tr>
+        <tr><td><strong>Winnow</strong></td><td>Using air flow to separate lighter chaff from heavier seeds; can be done with wind, fans, or seed blowers.</td></tr>
+    </table>
+    
+    <div style="background:#fff2db; border-radius:1.5rem; padding:1.5rem; margin:2rem 0;">
+        <h3>📝 How to Use This Glossary</h3>
+        <p><i class="fas fa-lightbulb"></i> <strong>Hover over any term</strong> in the top sections for a quick definition. The full A–Z table below provides comprehensive definitions for all terms.</p>
+        <p><i class="fas fa-print"></i> <strong>Print-friendly version:</strong> The glossary is formatted to print well – use your browser's Print function (File → Print) and choose "Save as PDF" for a digital copy.</p>
+        <p><i class="fas fa-search"></i> <strong>Missing a term?</strong> Contact your trainer or refer to the Florabank resources in Tab 14.</p>
+    </div>
+</div>
+
+        <div id="tab13" class="tab-content" role="tabpanel" aria-labelledby="tab-tab13">
+            <h2><i class="fas fa-comment-dots"></i> Field Scenarios: What Would You Do?</h2>
+            
+            <div class="scenario-box">
+                <h3>Scenario 1: The Small Population</h3>
+                <p><strong>Location:</strong> Dry sclerophyll forest, northeast Tasmania<br>
+                <strong>Target species:</strong> <em>Acacia melanoxylon</em> (Blackwood wattle) – Type B (dry dehiscent)<br>
+                <strong>Permit status:</strong> Valid permit for collection on public land<br>
+                <strong>Situation:</strong> You arrive at the site and find only 12 mature plants, all with good seed crops. The population is isolated with no nearby stands. Your work plan assumed at least 30 plants.</p>
+
+                <div class="scenario-question">
+                    <h4>What do you do?</h4>
+                    <div class="scenario-options" id="scenario1-options">
+                        <div class="scenario-option" onclick="selectScenarioOption(this, 1, 'A')">A) Collect from all 12 plants, taking up to 50% of seed from each since the crop is good</div>
+                        <div class="scenario-option" onclick="selectScenarioOption(this, 1, 'B')">B) Abandon the collection entirely and report failure</div>
+                        <div class="scenario-option" onclick="selectScenarioOption(this, 1, 'C')">C) Collect from 5-6 plants, taking only 10% from each, and note the small population in your records</div>
+                        <div class="scenario-option" onclick="selectScenarioOption(this, 1, 'D')">D) Collect from all 12 plants but take less than 20% from each, and flag the site for future monitoring</div>
+                    </div>
+                </div>
+
+                <div id="scenario1-feedback" class="scenario-feedback">
+                    <p><strong>Scenario 1 Feedback:</strong> <span id="scenario1-text"></span></p>
+                </div>
+
+                <button class="btn" onclick="resetScenario(1)"><i class="fas fa-undo"></i> Reset</button>
+            </div>
+
+            <div class="scenario-box">
+                <h3>Scenario 2: The Unexpected Weather Change</h3>
+                <p><strong>Location:</strong> Coastal heath, Freycinet Peninsula<br>
+                <strong>Target species:</strong> <em>Banksia marginata</em> (Silver Banksia) – requires cone heating for seed extraction<br>
+                <strong>Current conditions:</strong> Morning was fine, but by midday a cold front is approaching with strong winds and possible rain in 2-3 hours. You're a 1.5 hour walk from the vehicle.</p>
+
+                <div class="scenario-question">
+                    <h4>What do you do?</h4>
+                    <div class="scenario-options" id="scenario2-options">
+                        <div class="scenario-option" onclick="selectScenarioOption(this, 2, 'A')">A) Keep collecting and hope the weather holds – you've come a long way</div>
+                        <div class="scenario-option" onclick="selectScenarioOption(this, 2, 'B')">B) Pack up immediately and head back, prioritising safety</div>
+                        <div class="scenario-option" onclick="selectScenarioOption(this, 2, 'C')">C) Move to a sheltered area and continue until rain starts</div>
+                        <div class="scenario-option" onclick="selectScenarioOption(this, 2, 'D')">D) Radio base for advice and wait for their response</div>
+                    </div>
+                </div>
+
+                <div id="scenario2-feedback" class="scenario-feedback">
+                    <p><strong>Scenario 2 Feedback:</strong> <span id="scenario2-text"></span></p>
+                </div>
+
+                <button class="btn" onclick="resetScenario(2)"><i class="fas fa-undo"></i> Reset</button>
+            </div>
+
+            <div class="scenario-box">
+                <h3>Scenario 3: The Uncertain ID</h3>
+                <p><strong>Location:</strong> Wet forest, Styx Valley<br>
+                <strong>Target species:</strong> <em>Nothofagus cunninghamii</em> (Myrtle beech) – recalcitrant seed<br>
+                <strong>Situation:</strong> You find a tree that looks similar to Myrtle beech, but the leaves are slightly different from your field guide. There are other trees nearby with the same leaf shape. You're unsure if it's the target species or a lookalike.</p>
+
+                <div class="scenario-question">
+                    <h4>What do you do?</h4>
+                    <div class="scenario-options" id="scenario3-options">
+                        <div class="scenario-option" onclick="selectScenarioOption(this, 3, 'A')">A) Collect a small sample anyway – it's probably right</div>
+                        <div class="scenario-option" onclick="selectScenarioOption(this, 3, 'B')">B) Don't collect, but press a voucher specimen for later identification</div>
+                        <div class="scenario-option" onclick="selectScenarioOption(this, 3, 'C')">C) Collect seeds and a voucher, labelling them as "uncertain"</div>
+                        <div class="scenario-option" onclick="selectScenarioOption(this, 3, 'D')">D) Photograph the tree and leaves, then collect seeds if confident enough</div>
+                    </div>
+                </div>
+
+                <div id="scenario3-feedback" class="scenario-feedback">
+                    <p><strong>Scenario 3 Feedback:</strong> <span id="scenario3-text"></span></p>
+                </div>
+
+                <button class="btn" onclick="resetScenario(3)"><i class="fas fa-undo"></i> Reset</button>
+            </div>
+        </div>
+
+        <!-- ===== NEW TAB 14: LINKS & RESOURCES ===== -->
+        <div id="tab14" class="tab-content" role="tabpanel" aria-labelledby="tab-tab14">
+            <h2><i class="fas fa-link"></i> Essential Links & Resources</h2>
+            <p>All key references, permit contacts, and training materials consolidated in one place.</p>
+
+            <div class="resources-grid">
+                <!-- Key References -->
+                <div class="resource-card">
+                    <h3><i class="fas fa-book"></i> Key References</h3>
+                    <ul>
+                        <li><a href="https://www.anpc.asn.au/wp-content/uploads/2025/08/6.-Seed-Collection.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Florabank Module 6 (ANPC)</a></li>
+                        <li><a href="https://nre.tas.gov.au/conservation/forms-and-permits/scientific-permits-and-authorities-to-collect-native-flora" target="_blank"><i class="fas fa-file-contract"></i> NRE Tas Scientific Permits</a></li>
+                        <li><a href="https://www.understorey-network.org.au/" target="_blank"><i class="fas fa-leaf"></i> Understorey Network Tasmania</a></li>
+                        <li><a href="https://avh.chah.org.au/" target="_blank"><i class="fas fa-seedling"></i> Australasian Virtual Herbarium (AVH)</a></li>
+                        <li><a href="https://www.seedpartnership.org.au/" target="_blank"><i class="fas fa-handshake"></i> Australian Seed Bank Partnership</a></li>
+                        <li><a href="https://www.environment.gov.au/epbc" target="_blank"><i class="fas fa-globe"></i> EPBC Act (Commonwealth)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Permit Contacts -->
+                <div class="resource-card">
+                    <h3><i class="fas fa-envelope"></i> Permit Contacts</h3>
+                    <ul>
+                        <li><strong>Non-threatened plants (reserved land):</strong><br>
+                            <i class="fas fa-user"></i> Ecologist, Natural Values Science<br>
+                            <i class="fas fa-building"></i> Natural & Cultural Heritage Division<br>
+                            <i class="fas fa-mail-bulk"></i> GPO Box 44 Hobart, TAS 7001</li>
+                        <li><strong>Threatened species:</strong><br>
+                            <i class="fas fa-user"></i> Threatened Species Section<br>
+                            <i class="fas fa-building"></i> Natural & Cultural Heritage Division<br>
+                            <i class="fas fa-mail-bulk"></i> GPO Box 44 Hobart, TAS 7001</li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:FloraPermit.Enquiries@nre.tas.gov.au">FloraPermit.Enquiries@nre.tas.gov.au</a></li>
+                    </ul>
+                </div>
+
+                <!-- Training & Professional Development -->
+                <div class="resource-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Training Materials</h3>
+                    <ul>
+                        <li><a href="#" target="_blank"><i class="fas fa-clipboard-list"></i> AHCECR305 Unit of Competency (training.gov.au)</a></li>
+                        <li><a href="#" target="_blank"><i class="fas fa-chalkboard-teacher"></i> Florabank Seed Collection Learning Hub</a></li>
+                        <li><a href="#" target="_blank"><i class="fas fa-video"></i> Understorey Network Webinars</a></li>
+                        <li><a href="#" target="_blank"><i class="fas fa-file-alt"></i> Tasmanian Seed Collection Field Guide (PDF)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Field Tools & Apps -->
+                <div class="resource-card">
+                    <h3><i class="fas fa-mobile-alt"></i> Field Tools & Apps</h3>
+                    <ul>
+                        <li><a href="#" target="_blank"><i class="fas fa-map-marked-alt"></i> Atlas of Living Australia</a></li>
+                        <li><a href="#" target="_blank"><i class="fas fa-cloud-sun-rain"></i> BOM Weather (field safety)</a></li>
+                        <li><a href="#" target="_blank"><i class="fas fa-route"></i> Gaia GPS / Avenza Maps</a></li>
+                        <li><a href="#" target="_blank"><i class="fas fa-calculator"></i> Seed Quantity Calculator (Florabank)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Downloadable Resources Section -->
+            <div style="background: var(--accent-soft); border-radius: 2rem; padding: 2rem; margin-top: 2rem;">
+                <h3 style="margin-top: 0;">📥 Downloadable Resources</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <h5>Field Templates</h5>
+                        <ul style="list-style: none;">
+                            <li><a href="#"><i class="fas fa-file-excel"></i> Collection Data Sheet</a></li>
+                            <li><a href="#"><i class="fas fa-file-pdf"></i> Risk Assessment Template</a></li>
+                            <li><a href="#"><i class="fas fa-file-word"></i> Work Plan Template</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Legislation</h5>
+                        <ul style="list-style: none;">
+                            <li><a href="#"><i class="fas fa-file-pdf"></i> Threatened Species Protection Act 1995</a></li>
+                            <li><a href="#"><i class="fas fa-file-pdf"></i> Nature Conservation Act 2002</a></li>
+                            <li><a href="#"><i class="fas fa-file-pdf"></i> EPBC Act – Significant Impact Guidelines</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Posters & Guides</h5>
+                        <ul style="list-style: none;">
+                            <li><a href="#"><i class="fas fa-file-pdf"></i> Fruit Type Identification Poster</a></li>
+                            <li><a href="#"><i class="fas fa-file-pdf"></i> Biosecurity Field Protocol</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer-expanded">
+            <div class="footer-grid">
+                <div>
+                    <h5>AHCECR305 v1.4</h5>
+                    <p>Complete learning resource for Certificate III in Conservation and Ecosystem Management</p>
+                    <p>Release 1.4 · 2026 · aligned to training.gov.au</p>
+                </div>
+                <div>
+                    <h5>Key References</h5>
+                    <ul style="list-style:none;">
+                        <li><a href="https://www.anpc.asn.au/wp-content/uploads/2025/08/6.-Seed-Collection.pdf" target="_blank">Florabank Module 6 (ANPC)</a></li>
+                        <li><a href="https://nre.tas.gov.au/conservation/forms-and-permits/scientific-permits-and-authorities-to-collect-native-flora" target="_blank">NRE Tas Scientific Permits</a></li>
+                        <li><a href="https://www.understorey-network.org.au/" target="_blank">Understorey Network Tasmania</a></li>
+                        <li><a href="https://avh.chah.org.au/" target="_blank">Australasian Virtual Herbarium (AVH)</a></li>
+                        <li><a href="https://www.seedpartnership.org.au/" target="_blank">Australian Seed Bank Partnership </a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Permit Contacts</h5>
+                    <p><strong>Non-threatened plants:</strong> Ecologist, Natural Values Science, NRE Tas</p>
+                    <p><strong>Threatened species:</strong> Threatened Species Section, NRE Tas</p>
+                    <p>Email: <a href="mailto:FloraPermit.Enquiries@nre.tas.gov.au">FloraPermit.Enquiries@nre.tas.gov.au</a></p>
+                </div>
+                <div>
+                    <h5>Last Updated</h5>
+                    <p>March 2026</p>
+                    <p>Interactive version 1.5</p>
+                    <p>Developed by Jay Rowley 2026</p>
+                    <p><i class="fas fa-check-circle" style="color:#f5b342;"></i> Verified against NRE Tas guidelines 2026</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Tab switching functionality with ARIA support
+        function switchTab(event, tabId) {
+            // Get all tab contents and tabs
+            const tabContents = document.querySelectorAll('.tab-content');
+            const tabs = document.querySelectorAll('.tab');
+            
+            // Hide all tab contents and update ARIA
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                content.setAttribute('aria-hidden', 'true');
+            });
+            
+            // Deactivate all tabs
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+                tab.setAttribute('aria-selected', 'false');
+            });
+            
+            // Activate the selected tab and content
+            const selectedTab = document.getElementById(`tab-${tabId}`);
+            const selectedContent = document.getElementById(tabId);
+            
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+                selectedTab.setAttribute('aria-selected', 'true');
+            }
+            
+            if (selectedContent) {
+                selectedContent.classList.add('active');
+                selectedContent.setAttribute('aria-hidden', 'false');
+            }
+            
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Quiz functions (placeholders - keep your original implementation)
+        function checkAllQuizzes() {
+            alert('Quiz checking would run here');
+        }
+
+        function resetQuizzes() {
+            alert('Quiz reset would run here');
+        }
+
+        // Game functions
+        function resetGame() {
+            location.reload();
+        }
+
+        function checkGame() {
+            alert('Game check would run here');
+        }
+
+        // Export functions
+        function prepareForExport() {
+            alert('To save as PDF:\n1. Click Print\n2. Choose "Save as PDF"\n3. Select A4 portrait\n4. Enable "Background graphics" for best results');
+            window.print();
+        }
+
+        // Scenario functions (keep your original implementation)
+        function selectScenarioOption(element, scenarioNum, choice) {
+            const options = document.querySelectorAll(`#scenario${scenarioNum}-options .scenario-option`);
+            options.forEach(opt => opt.classList.remove('selected'));
+            
+            element.classList.add('selected');
+            
+            const feedback = {
+                1: {
+                    'A': '❌ **Not ideal.** Collecting 50% from a small population (only 12 plants) risks the long-term survival of this isolated stand. The 20% rule exists for good reason.',
+                    'B': '❌ **Too drastic.** Abandoning completely wastes the trip and doesn\'t contribute to collection targets. Better to collect sustainably.',
+                    'C': '✅ **Good practice.** Collecting from half the plants at 10% is a cautious, sustainable approach that protects the population while still getting seed.',
+                    'D': '🟡 **Acceptable but monitor.** Collecting less than 20% from all plants is better than option A, but in a population this small, fewer plants (5-6) with lighter take is even safer.'
+                },
+                2: {
+                    'A': '❌ **Unsafe decision.** Strong winds and rain increase risks of falls, hypothermia, and difficult navigation. Safety first – always.',
+                    'B': '✅ **Correct decision.** Packing up early and heading back ensures the team\'s safety. Seed collection can be rescheduled; injuries cannot.',
+                    'C': '❌ **Risky.** Sheltering might delay the inevitable, and conditions can deteriorate faster than expected. Best to leave early.',
+                    'D': '🟡 **Slows response.** Radioing base is good, but you already have the key info (weather coming). Trust your judgment and head back.'
+                },
+                3: {
+                    'A': '❌ **Never collect if uncertain.** Collecting the wrong species could spread seed of a non-target or even weedy species, and wastes collection effort.',
+                    'B': '✅ **Best practice.** Pressing a voucher allows later positive ID. Never collect seed from an uncertain species – wait for confirmation.',
+                    'C': '🟡 **Better, but still risky.** Collecting seed before positive ID could still lead to misidentification. Voucher first, collect later if confirmed.',
+                    'D': '❌ **Not sufficient.** Photos help, but without a pressed specimen or expert confirmation, you cannot be certain. Do not collect.'
+                }
+            };
+            
+            const feedbackDiv = document.getElementById(`scenario${scenarioNum}-feedback`);
+            const feedbackText = document.getElementById(`scenario${scenarioNum}-text`);
+            
+            feedbackText.innerHTML = feedback[scenarioNum][choice];
+            feedbackDiv.style.display = 'block';
+            
+            if (choice === 'A' || (scenarioNum === 1 && choice === 'A') || (scenarioNum === 2 && choice === 'A') || (scenarioNum === 3 && choice === 'A')) {
+                feedbackDiv.className = 'scenario-feedback feedback-poor';
+            } else if (choice === 'B' && scenarioNum !== 1) {
+                feedbackDiv.className = 'scenario-feedback feedback-good';
+            } else if ((scenarioNum === 1 && choice === 'C') || (scenarioNum === 1 && choice === 'D')) {
+                feedbackDiv.className = choice === 'C' ? 'scenario-feedback feedback-good' : 'scenario-feedback feedback-risky';
+            } else if (choice === 'B' || choice === 'C') {
+                feedbackDiv.className = 'scenario-feedback feedback-risky';
+            } else {
+                feedbackDiv.className = 'scenario-feedback feedback-poor';
+            }
+        }
+
+        function resetScenario(scenarioNum) {
+            const options = document.querySelectorAll(`#scenario${scenarioNum}-options .scenario-option`);
+            options.forEach(opt => opt.classList.remove('selected'));
+            
+            document.getElementById(`scenario${scenarioNum}-feedback`).style.display = 'none';
+        }
+
+        // Initialize ARIA states on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial ARIA states
+            const activeTab = document.querySelector('.tab.active');
+            if (activeTab) {
+                activeTab.setAttribute('aria-selected', 'true');
+            }
+            
+            const activeContent = document.querySelector('.tab-content.active');
+            if (activeContent) {
+                activeContent.setAttribute('aria-hidden', 'false');
+            }
+            
+            console.log('Enhanced resource loaded with gallery, glossary, scenarios, and resources tab');
+        });
+    </script>
+</body>
+</html>
