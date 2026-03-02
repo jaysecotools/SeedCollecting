@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AHCECR305 · Collect native seed | Comprehensive field & study guide</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+            background: #e7f3e7;
+            color: #1d3a2c;
+            line-height: 1.6;
+            padding: 1.5rem;
+        }
+
+        .master-guide {
+            max-width: 1500px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 2.5rem;
+            box-shadow: 0 30px 50px rgba(0, 40, 0, 0.25);
+            overflow: hidden;
+        }
+
+        /* header */
+        .header {
+            background: linear-gradient(135deg, #0f3f2e, #226f54);
+            color: white;
+            padding: 2.5rem 3rem;
+            border-bottom: 8px solid #f5b342;
+        }
+        .header h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .header h1 i {
+            color: #f5b342;
+            margin-right: 18px;
+        }
+        .header .sub {
+            font-size: 1.3rem;
+            margin-top: 0.7rem;
+            display: flex;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            opacity: 0.95;
+        }
+        .header .sub i {
+            color: #f5b342;
+            width: 2rem;
+        }
+
+        /* navigation */
+        .nav-bar {
+            background: #2a6e5a;
+            padding: 0.8rem 2.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem 2.2rem;
+            border-bottom: 2px solid #bcd5b4;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .nav-bar a {
+            color: #fefee0;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0.2rem 0;
+            border-bottom: 3px solid transparent;
+            transition: 0.15s;
+        }
+        .nav-bar a:hover {
+            border-bottom-color: #f5b342;
+            color: #ffecb3;
+        }
+
+        /* main grid */
+        .core-grid {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 2rem;
+            padding: 2.5rem;
+            background: #ffffff;
+        }
+        @media (max-width: 1000px) {
+            .core-grid { grid-template-columns: 1fr; }
+        }
+
+        /* left panel */
+        .main-panel {
+            background: #f8fff8;
+            border-radius: 2rem;
+            padding: 2rem;
+            box-shadow: inset 0 2px 8px rgba(0,20,0,0.02), 0 10px 20px rgba(0,40,0,0.05);
+        }
+        .side-panel {
+            background: #ecf6ec;
+            border-radius: 2rem;
+            padding: 2rem 1.8rem;
+            box-shadow: 0 15px 25px rgba(0,35,0,0.12);
+            border: 1px solid #c2dec2;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 650;
+            color: #0f462f;
+            margin: 2rem 0 1.5rem 0;
+            border-left: 14px solid #f5b342;
+            padding-left: 1.2rem;
+        }
+        h2:first-of-type { margin-top: 0; }
+
+        h3 {
+            font-size: 1.7rem;
+            font-weight: 650;
+            color: #1b5a41;
+            margin: 2rem 0 1rem 0;
+            border-bottom: 3px dashed #b8dcb8;
+            padding-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .florabank-highlight {
+            background: #e6f2e6;
+            border-radius: 28px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 10px solid #3f8b6f;
+        }
+        .florabank-highlight h4 {
+            font-size: 1.4rem;
+            color: #1c6040;
+            margin-bottom: 1rem;
+        }
+
+        .collapsible {
+            background-color: #f4faf4;
+            border-radius: 1.4rem;
+            margin: 1.2rem 0;
+            border: 1px solid #b2d8b2;
+        }
+        .collapsible summary {
+            font-weight: 700;
+            font-size: 1.3rem;
+            padding: 1.2rem 1.8rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .collapsible summary i { color: #3a7856; font-size: 1.6rem; }
+        .collapsible summary::-webkit-details-marker { display: none; }
+        .collapsible-content {
+            padding: 0.5rem 2rem 2rem 2rem;
+        }
+
+        .fruit-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .filter-btn {
+            background: white;
+            border: 2px solid #569e6c;
+            border-radius: 50px;
+            padding: 0.6rem 1.4rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .filter-btn.active {
+            background: #226f54;
+            color: white;
+            border-color: #226f54;
+        }
+
+        .species-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+        .species-item {
+            background: white;
+            border-radius: 40px;
+            padding: 0.5rem 1.2rem;
+            border: 1px solid #b8d9b8;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        .fruit-badge {
+            width: 16px; height: 16px; border-radius: 50%;
+            background: #a0c7a0;
+        }
+        .fruit-badge.A { background: #c45d9b; }  /* fleshy */
+        .fruit-badge.B { background: #d4a13e; }  /* dry dehiscent */
+        .fruit-badge.C { background: #7f9a6b; }  /* dry indehiscent */
+
+        .map-svg {
+            background: #d5eed5;
+            border-radius: 20px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .checklist-block {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,20,0,0.1);
+        }
+        .checklist-block li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 0.8rem 0;
+            list-style: none;
+        }
+        .checklist-block input[type="checkbox"] {
+            width: 20px; height: 20px; accent-color: #226f54;
+        }
+
+        .resource-card {
+            background: #fff9e6;
+            border-radius: 20px;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-left: 8px solid #f5b342;
+        }
+
+        hr { border: 2px solid #c5e0c5; margin: 2rem 0; }
+
+        footer {
+            background: #17382b;
+            color: #e0f0da;
+            padding: 2.5rem 3rem;
+        }
+        footer a { color: #f5b342; text-decoration: none; }
+    </style>
+</head>
+<body>
+<div class="master-guide">
+    <div class="header">
+        <h1><i class="fas fa-seedling"></i> AHCECR305 · Collect native seed</h1>
+        <div class="sub">
+            <span><i class="fas fa-clipboard-list"></i> Cert III Conservation & Ecosystem Management</span>
+            <span><i class="fas fa-map-pin"></i> Florabank · NRE Tas · Understorey Network</span>
+        </div>
+    </div>
+    <div class="nav-bar">
+        <a href="#planning"><i class="fas fa-calendar-alt"></i> Planning</a>
+        <a href="#id"><i class="fas fa-tag"></i> ID & Provenance</a>
+        <a href="#collect"><i class="fas fa-hand-holding-heart"></i> Collection</a>
+        <a href="#sustain"><i class="fas fa-leaf"></i> Sustainability</a>
+        <a href="#clean"><i class="fas fa-broom"></i> Cleaning & Storage</a>
+        <a href="#resources"><i class="fas fa-book-open"></i> Resources</a>
+        <a href="#interactive"><i class="fas fa-gamepad"></i> Interactive</a>
+    </div>
+
+    <div class="core-grid">
+        <!-- MAIN (expanded content) -->
+        <div class="main-panel" id="main">
+            <!-- PLANNING (incorporating florabank detail) -->
+            <section id="planning">
+                <h2>🗺️ 1. Planning & preparation</h2>
+                <div class="florabank-highlight">
+                    <h4><i class="fas fa-seedling"></i> Florabank Guidelines (Module 6) — key planning steps</h4>
+                    <ul style="margin-left:1.2rem;">
+                        <li><strong>Purpose:</strong> restoration, conservation, nursery? Defines quantity, provenance.</li>
+                        <li><strong>Desktop survey:</strong> AVH, regional guides, Atlas of Living Australia, previous surveys.</li>
+                        <li><strong>Target species list</strong> — refine based on likelihood of collection, storage behaviour (orthodox/recalcitrant – see Module 9).</li>
+                        <li><strong>Reconnaissance</strong> at flowering to locate populations, mark with GPS/flagging tape.</li>
+                        <li><strong>Phenology:</strong> time from flower to seed varies (1 month to >1 year). Serotinous species hold seed years.</li>
+                    </ul>
+                </div>
+                <div class="collapsible">
+                    <summary><i class="fas fa-permit"></i> Permits & permissions (NRE Tas & Understorey)</summary>
+                    <div class="collapsible-content">
+                        <p><strong>Tasmania:</strong> Permits required for taking from National Parks, State Forest, Crown Land, reserves. Apply via <a href="https://nre.tas.gov.au/conservation/publications-forms-and-permits/forms-and-permits/scientific-permits-and-authorities-to-collect-native-flora" target="_blank">NRE Tas scientific permits</a>.</p>
+                        <p><strong>Private land:</strong> written permission from landholder. Indigenous elders: consult for collection on Country.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ID & PROVENANCE -->
+            <section id="id">
+                <h3><i class="fas fa-dna"></i> Species ID & provenance</h3>
+                <p><strong>Use:</strong> Floras (PlantNET, EUCLID), APC (Australian Plant Census) for current names, herbarium specimens, <a href="https://www.understorey-network.org.au/" target="_blank">Understorey Network plant database</a> (1800+ Tasmanian spp).</p>
+                <p>If unsure: take voucher (leaves, fruit, flowers pressed) + photos, send to herbarium.</p>
+                <div style="background:#daf0da; border-radius: 16px; padding:1rem;">
+                    <i class="fas fa-globe-asia"></i> <strong>Provenance:</strong> collect from similar rainfall, temp, soil → local adaptation.
+                </div>
+            </section>
+
+            <!-- COLLECTION METHODS (expanded) -->
+            <section id="collect">
+                <h3><i class="fas fa-cut"></i> Collection methods & equipment</h3>
+                <table class="table-methods" style="width:100%; border-collapse:collapse; background:white; border-radius:20px; overflow:hidden;">
+                    <tr style="background:#2a6e5a; color:white;"><th>Method</th><th>Tool</th><th>Species example</th></tr>
+                    <tr><td>Hand picking / fallen limbs</td><td>secateurs, bags</td><td>ground orchids, small fruits</td></tr>
+                    <tr><td>Pole pruner + ground sheet</td><td>extendable pruner, tarp</td><td><i>Eucalyptus</i>, <i>Banksia</i></td></tr>
+                    <tr><td>Shake / beat onto sheet</td><td>sticks, hessian</td><td><i>Leptospermum</i> (dehiscent)</td></tr>
+                    <tr><td>Vacuum / blower-vac</td><td>modified leaf vac</td><td><i>Melaleuca</i> small seed</td></tr>
+                </table>
+                <p><i class="fas fa-arrow-up"></i> Above 2m: pole pruner, ladder, ropes, rifle (with permission).</p>
+            </section>
+
+            <!-- SUSTAINABILITY + 20% rule -->
+            <section id="sustain">
+                <h3><i class="fas fa-recycle"></i> Sustainable collecting</h3>
+                <ul>
+                    <li><i class="fas fa-percent"></i> <strong>Max 20%</strong> from one plant / population (Florabank).</li>
+                    <li>Avoid recently burnt areas (allow regeneration).</li>
+                    <li>Minimise trampling; protect nests/habitat.</li>
+                    <li>Clean footwear & tools to prevent weed/pathogen spread (biosecurity).</li>
+                </ul>
+            </section>
+
+            <!-- CLEAN, STORE, LABEL -->
+            <section id="clean">
+                <h3><i class="fas fa-jar"></i> Cleaning, drying & storage</h3>
+                <p><strong>Cleaning:</strong> remove chaff, twigs; extraction by: warm paper bag, low oven, threshing, fermentation (fleshy). Sieves, tweezers.</p>
+                <p><strong>Drying:</strong> spread on trays, turn – essential to prevent mould.</p>
+                <p><strong>Storage:</strong> airtight containers (glass/ziplock), constant temp, pest‑proof. Some seed needs refrigeration (orthodox) – check recalcitrant species (e.g. <i>Nothofagus</i>) cannot be stored long.</p>
+                <div class="label-example" style="background:#1b4d3e; color:#fff; border-radius:40px; padding:1rem 2rem; font-family:monospace; margin:1rem 0;">
+                    <i class="fas fa-tag"></i> <strong>Acacia melanoxylon</strong> | Freer Farm | 26/02/2026 | coll. L. Smith | WE | 34g
+                </div>
+            </section>
+
+            <!-- interactive fruit filter (javascript) -->
+            <section id="interactive">
+                <h2>🎯 interactive: fruit type explorer</h2>
+                <p>Click a fruit type to show matching species from typical Tasmanian list:</p>
+                <div class="fruit-filter">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="A">Fleshy (A)</button>
+                    <button class="filter-btn" data-filter="B">Dry dehiscent (B)</button>
+                    <button class="filter-btn" data-filter="C">Dry indehiscent (C)</button>
+                </div>
+                <div class="species-list" id="speciesList">
+                    <!-- filled from js -->
+                </div>
+                <p><small>Data from Understorey Network & Florabank.</small></p>
+            </section>
+
+            <!-- resource list (extended) -->
+            <section id="resources">
+                <h2><i class="fas fa-link"></i> Resources & further reading</h2>
+                <div class="resource-card"><i class="fab fa-floristik"></i> <strong>Florabank Guidelines (Module 6)</strong> – detailed collection, planning, orthodox/recalcitrant seed. <a href="https://www.anpc.asn.au/wp-content/uploads/2025/08/6.-Seed-Collection.pdf" target="_blank">Download PDF</a></div>
+                <div class="resource-card"><i class="fas fa-tree"></i> <strong>Understorey Network</strong> – Tasmanian plant database, nursery, growing guides. <a href="https://www.understorey-network.org.au/" target="_blank">Visit website</a></div>
+                <div class="resource-card"><i class="fas fa-file-signature"></i> <strong>NRE Tas permits</strong> – scientific permits & authorities. <a href="https://nre.tas.gov.au/conservation/publications-forms-and-permits/forms-and-permits/scientific-permits-and-authorities-to-collect-native-flora" target="_blank">Apply here</a></div>
+                <div class="resource-card"><i class="fas fa-atlas"></i> <strong>Australasian Virtual Herbarium (AVH)</strong> – occurrence data.</div>
+            </section>
+        </div>
+
+        <!-- SIDE PANEL (interactive checklists, key facts) -->
+        <div class="side-panel">
+            <div style="position:sticky; top: 80px;">
+                <h4 style="font-size:1.7rem; color:#0f3f2e;"><i class="fas fa-check-double"></i> Field ready?</h4>
+                <div class="checklist-block">
+                    <h5>☐ pre-trip checklist</h5>
+                    <li><input type="checkbox"> permits / landholder permission</li>
+                    <li><input type="checkbox"> target species list & ID sheets</li>
+                    <li><input type="checkbox"> reconnaissance done (flowering)</li>
+                    <li><input type="checkbox"> weather check / access</li>
+                    <li><input type="checkbox"> tools: pole pruner, secateurs, bags, sieves</li>
+                    <li><input type="checkbox"> PPE: boots, hi-vis, gloves, first aid</li>
+                    <li><input type="checkbox"> GPS, camera, flagging tape</li>
+                    <li><input type="checkbox"> risk assessment completed</li>
+                </div>
+
+                <!-- quick provenance map (mock interactive) -->
+                <div class="map-svg" style="margin:2rem 0;">
+                    <i class="fas fa-map-marked-alt" style="font-size:3rem; color:#1d613d;"></i>
+                    <p><strong>Provenance match</strong><br>Similar rainfall, temp, elevation → higher restoration success.</p>
+                    <div style="background:#bde0bd; padding:0.5rem; border-radius:20px;">Click to explore (demo) 🗺️</div>
+                </div>
+
+                <!-- quick ID -->
+                <div style="background:#fff0d4; border-radius:30px; padding:1.5rem;">
+                    <i class="fas fa-question-circle"></i> <strong>Uncertain species?</strong><br>Voucher + photo + location → send to herbarium.
+                </div>
+
+                <!-- orthodox / recalcitrant note -->
+                <div style="margin-top:2rem; background: #aacfaa; border-radius: 20px; padding:1rem;">
+                    <strong>📦 seed storage behaviour</strong><br>🔹 Orthodox – can be dried & frozen (most Australian plants).<br>🔹 Recalcitrant – cannot survive drying; sow fresh (e.g. many rainforest species).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem;">
+            <div>
+                <i class="fas fa-leaf" style="color:#f5b342;"></i> <strong>AHCECR305 assessment alignment</strong><br>
+                Written questions • Work plan & records • Performance tasks
+            </div>
+            <div>
+                <strong>📚 references</strong><br>
+                Florabank Consortium 2021; NRE Tas; Understorey Network
+            </div>
+            <div>
+                <i class="fas fa-edit"></i> Interactive fruit filter uses javascript – filter species by type.<br>
+                <span id="js-check" style="color:#ffd966;">✓ JS enabled – filters work</span>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script>
+    // species dataset (bl省) integrating fruit types
+    const speciesData = [
+        { name: "Acacia melanoxylon", fruit: "B" },
+        { name: "Leptospermum scoparium", fruit: "B" },
+        { name: "Eucalyptus obliqua", fruit: "B" },
+        { name: "Lomatia tinctoria", fruit: "B" },
+        { name: "Billardiera longiflora", fruit: "A" },
+        { name: "Tasmannia lanceolata", fruit: "A" },
+        { name: "Poa poiformis", fruit: "C" },
+        { name: "Carex appressa", fruit: "C" },
+        { name: "Melaleuca squarrosa", fruit: "B" },
+        { name: "Acacia verticillata", fruit: "B" },
+        { name: "Coprosma quadrifida", fruit: "A" },
+        { name: "Gahnia grandis", fruit: "C" }
+    ];
+
+    const listContainer = document.getElementById('speciesList');
+    function renderSpecies(filter = 'all') {
+        let html = '';
+        speciesData.forEach(s => {
+            if (filter === 'all' || s.fruit === filter) {
+                html += `<div class="species-item"><span class="fruit-badge ${s.fruit}"></span> ${s.name} <span style="margin-left:auto; font-size:0.8rem;">(${s.fruit})</span></div>`;
+            }
+        });
+        listContainer.innerHTML = html;
+    }
+
+    // filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            const filter = this.dataset.filter;
+            renderSpecies(filter);
+        });
+    });
+
+    // initial render
+    renderSpecies('all');
+
+    // optional: simulate map interaction (just ui)
+    document.querySelector('.map-svg div').addEventListener('click', () => {
+        alert('Provenance demo: choose similar rainfall, temp, soil to planting site. Consult Florabank Module 5.');
+    });
+</script>
+</body>
+</html>
