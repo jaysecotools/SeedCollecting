@@ -2178,28 +2178,127 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Quiz functions (placeholders - keep your original implementation)
+        // Quiz functionality
         function checkAllQuizzes() {
-            alert('Quiz checking would run here');
+            const quizCards = document.querySelectorAll('.quiz-question-card');
+            quizCards.forEach(card => {
+                const selected = card.querySelector('input[type=radio]:checked');
+                const feedback = card.querySelector('.quiz-feedback');
+                const correctAnswer = card.dataset.correct;
+                
+                if (selected) {
+                    feedback.style.display = 'block';
+                    if (selected.value === correctAnswer) {
+                        feedback.innerHTML = '✓ Correct! Well done.';
+                        feedback.className = 'quiz-feedback feedback-correct';
+                    } else {
+                        feedback.innerHTML = '✗ Incorrect. Review the relevant section and try again.';
+                        feedback.className = 'quiz-feedback feedback-incorrect';
+                    }
+                } else {
+                    feedback.style.display = 'block';
+                    feedback.innerHTML = 'Please select an answer.';
+                    feedback.className = 'quiz-feedback feedback-incorrect';
+                }
+            });
         }
 
         function resetQuizzes() {
-            alert('Quiz reset would run here');
+            const quizCards = document.querySelectorAll('.quiz-question-card');
+            quizCards.forEach(card => {
+                const radios = card.querySelectorAll('input[type=radio]');
+                radios.forEach(radio => radio.checked = false);
+                const feedback = card.querySelector('.quiz-feedback');
+                feedback.style.display = 'none';
+            });
         }
 
-        // Game functions
+        // Drag and drop game functionality
+        const draggables = document.querySelectorAll('.draggable-item');
+        const dropZones = document.querySelectorAll('.drop-zone');
+        
+        draggables.forEach(item => {
+            item.addEventListener('dragstart', (e) => {
+                e.dataTransfer.setData('text/plain', e.target.id);
+                e.dataTransfer.setData('fruit-type', e.target.dataset.fruit);
+            });
+        });
+
+        dropZones.forEach(zone => {
+            zone.addEventListener('dragover', (e) => e.preventDefault());
+            
+            zone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                const draggedId = e.dataTransfer.getData('text/plain');
+                const draggedElement = document.getElementById(draggedId);
+                const fruitType = e.dataTransfer.getData('fruit-type');
+                const zoneType = zone.dataset.fruit;
+                
+                if (fruitType === zoneType) {
+                    // Correct match
+                    const clone = document.createElement('span');
+                    clone.className = 'dropped-item';
+                    clone.textContent = draggedElement.textContent + ' ✓';
+                    
+                    if (zoneType === 'A') document.getElementById('droppedA').appendChild(clone);
+                    if (zoneType === 'B') document.getElementById('droppedB').appendChild(clone);
+                    if (zoneType === 'C') document.getElementById('droppedC').appendChild(clone);
+                    
+                    draggedElement.remove();
+                    
+                    // Show success feedback
+                    document.getElementById('gameFeedback').style.display = 'block';
+                    document.getElementById('gameFeedback').innerHTML = '✓ Correct match!';
+                    document.getElementById('gameFeedback').className = 'feedback-correct';
+                } else {
+                    // Wrong match
+                    document.getElementById('gameFeedback').style.display = 'block';
+                    document.getElementById('gameFeedback').innerHTML = '✗ Wrong zone! ' + draggedElement.textContent + ' is not a ' + zoneType + ' type.';
+                    document.getElementById('gameFeedback').className = 'feedback-incorrect';
+                }
+            });
+        });
+
         function resetGame() {
-            location.reload();
+            // Clear drop zones
+            document.getElementById('droppedA').innerHTML = '';
+            document.getElementById('droppedB').innerHTML = '';
+            document.getElementById('droppedC').innerHTML = '';
+            
+            // Restore draggable items (simplified - in production would rebuild from array)
+            location.reload(); // Quick reset for demo
         }
 
         function checkGame() {
-            alert('Game check would run here');
+            const droppedA = document.getElementById('droppedA').children.length;
+            const droppedB = document.getElementById('droppedB').children.length;
+            const droppedC = document.getElementById('droppedC').children.length;
+            const totalDropped = droppedA + droppedB + droppedC;
+            
+            if (totalDropped === 9) {
+                document.getElementById('gameFeedback').style.display = 'block';
+                document.getElementById('gameFeedback').innerHTML = '✓ Perfect! All species correctly matched!';
+                document.getElementById('gameFeedback').className = 'feedback-correct';
+            } else if (totalDropped > 0) {
+                document.getElementById('gameFeedback').style.display = 'block';
+                document.getElementById('gameFeedback').innerHTML = '✓ You have matched ' + totalDropped + ' of 9 species. Keep going!';
+                document.getElementById('gameFeedback').className = 'feedback-correct';
+            }
         }
 
         // Export functions
         function prepareForExport() {
             alert('To save as PDF:\n1. Click Print\n2. Choose "Save as PDF"\n3. Select A4 portrait\n4. Enable "Background graphics" for best results');
             window.print();
+        }
+
+        function copyChecklists() {
+            alert('Checklists copied to clipboard (simulated). In production, this would copy formatted text.');
+        }
+
+        // Download placeholder function
+        function downloadPDF() {
+            alert('In a full implementation, this would generate a PDF of all checklists. For now, use Print → Save as PDF.');
         }
 
         // Scenario functions (keep your original implementation)
