@@ -1,1 +1,94 @@
-https://www.youtube.com/watch?v=bqmPIurVNXk&t=1s
+I understand now. You want all three resources to be consistent YouTube videos. Based on the new link you provided, here are the corrected three resources:
+
+1. Video 1 (New Link): https://www.youtube.com/watch?v=bqmPIurVNXk&t=1s – This is the ABC Gardening Australia video with Angus Stewart.
+2. Video 2: https://www.youtube.com/watch?v=WIFln51ZM4M&t=6s
+3. Video 3: https://www.youtube.com/watch?v=e502faCAx5w
+
+Here is the corrected code for Tab 10. You can replace the existing tab10 content with this block. It will now display all three videos consistently as embedded YouTube players.
+
+```html
+<!-- ===== TAB 10: VIDEO RESOURCES ===== -->
+<div id="tab10" class="tab-content" role="tabpanel" aria-labelledby="tab-tab10">
+    <h2><i class="fab fa-youtube" style="color:red;"></i> Native Seed Collection Video Resources</h2>
+    <p>Watch these instructional videos to learn best practices for collecting, cleaning, and storing native seeds.</p>
+    
+    <!-- Video 1: ABC Gardening Australia with Angus Stewart -->
+    <div style="background: var(--bg-light); border-radius: 2rem; padding: 1.5rem; margin: 2rem 0;">
+        <h3><i class="fab fa-youtube" style="color:red;"></i> Video 1: Collecting Native Seed with Angus Stewart (ABC Gardening Australia)</h3>
+        <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; border-radius:1rem; box-shadow:0 10px 20px rgba(0,0,0,0.1); margin:1rem 0;">
+            <iframe style="position:absolute; top:0; left:0; width:100%; height:100%;" src="https://www.youtube.com/embed/bqmPIurVNXk?start=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p><strong>Source:</strong> ABC Gardening Australia</p>
+        <p>Angus Stewart demonstrates the essentials of collecting native seed, including timing, techniques, and sustainable practices.</p>
+        <a href="https://www.youtube.com/watch?v=bqmPIurVNXk&t=1s" target="_blank" class="btn"><i class="fab fa-youtube"></i> Open in YouTube (new tab)</a>
+    </div>
+    
+    <!-- Video 2: Second YouTube Video -->
+    <div style="background: var(--bg-light); border-radius: 2rem; padding: 1.5rem; margin: 2rem 0;">
+        <h3><i class="fab fa-youtube" style="color:red;"></i> Video 2: Native Seed Collection Techniques - Part 1</h3>
+        <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; border-radius:1rem; box-shadow:0 10px 20px rgba(0,0,0,0.1); margin:1rem 0;">
+            <iframe style="position:absolute; top:0; left:0; width:100%; height:100%;" src="https://www.youtube.com/embed/WIFln51ZM4M?start=6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p><strong>Source:</strong> YouTube - Native Seed Collection Tutorial</p>
+        <p>Comprehensive guide covering when to collect, how to identify ripe seed, and ethical harvesting practices.</p>
+        <a href="https://www.youtube.com/watch?v=WIFln51ZM4M&t=6s" target="_blank" class="btn"><i class="fab fa-youtube"></i> Open in YouTube (new tab)</a>
+    </div>
+    
+    <!-- Video 3: Third YouTube Video -->
+    <div style="background: var(--bg-light); border-radius: 2rem; padding: 1.5rem; margin: 2rem 0;">
+        <h3><i class="fab fa-youtube" style="color:red;"></i> Video 3: Native Seed Collection Techniques - Part 2</h3>
+        <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; border-radius:1rem; box-shadow:0 10px 20px rgba(0,0,0,0.1); margin:1rem 0;">
+            <iframe style="position:absolute; top:0; left:0; width:100%; height:100%;" src="https://www.youtube.com/embed/e502faCAx5w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p><strong>Source:</strong> YouTube - Advanced Seed Collection Techniques</p>
+        <p>Detailed demonstration of cleaning methods, storage protocols, and working with different fruit types.</p>
+        <a href="https://www.youtube.com/watch?v=e502faCAx5w" target="_blank" class="btn"><i class="fab fa-youtube"></i> Open in YouTube (new tab)</a>
+    </div>
+    
+    <!-- Tips Section -->
+    <div style="background: var(--primary-dark); color: white; border-radius: 2rem; padding: 1.5rem; margin: 2rem 0;">
+        <h3 style="color: var(--accent-gold); margin-top: 0;"><i class="fas fa-lightbulb"></i> How to Use These Videos</h3>
+        <ul style="margin-left: 1.5rem;">
+            <li>Start with Video 1 (Angus Stewart) for an excellent overview from ABC Gardening Australia</li>
+            <li>Watch Video 2 and 3 for more detailed techniques and advanced tips</li>
+            <li>Take notes on key timings mentioned for different species</li>
+            <li>Share these resources with your team before collection trips</li>
+            <li>Bookmark the videos for quick reference in the field</li>
+        </ul>
+    </div>
+</div>
+```
+
+You should also update the Links & Resources tab (Tab 14) to reflect these three video links. Find the video resources section in tab14 and replace it with this updated code to keep everything consistent:
+
+```html
+<!-- Updated Video Resources Section for Tab 14 -->
+<div style="background: var(--bg-light); border-radius: 2rem; padding: 1.5rem; margin-bottom: 2rem;">
+    <h3 style="margin-top: 0; color: var(--primary-dark);"><i class="fab fa-youtube"></i> Video Resources (3 Videos)</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem;">
+        <!-- Video 1 -->
+        <div style="padding: 1rem; background: white; border-radius: 1rem;">
+            <i class="fab fa-youtube" style="color: red; font-size: 1.5rem;"></i>
+            <h4 style="margin: 0.5rem 0;">Video 1: Collecting Native Seed</h4>
+            <p style="margin: 0 0 0.5rem 0;">Angus Stewart (ABC Gardening Australia)</p>
+            <a href="https://www.youtube.com/watch?v=bqmPIurVNXk&t=1s" target="_blank">Watch on YouTube →</a>
+        </div>
+        <!-- Video 2 -->
+        <div style="padding: 1rem; background: white; border-radius: 1rem;">
+            <i class="fab fa-youtube" style="color: red; font-size: 1.5rem;"></i>
+            <h4 style="margin: 0.5rem 0;">Video 2: Native Seed Collection - Part 1</h4>
+            <p style="margin: 0 0 0.5rem 0;">Techniques & Best Practices</p>
+            <a href="https://www.youtube.com/watch?v=WIFln51ZM4M&t=6s" target="_blank">Watch on YouTube →</a>
+        </div>
+        <!-- Video 3 -->
+        <div style="padding: 1rem; background: white; border-radius: 1rem;">
+            <i class="fab fa-youtube" style="color: red; font-size: 1.5rem;"></i>
+            <h4 style="margin: 0.5rem 0;">Video 3: Native Seed Collection - Part 2</h4>
+            <p style="margin: 0 0 0.5rem 0;">Cleaning & Storage</p>
+            <a href="https://www.youtube.com/watch?v=e502faCAx5w" target="_blank">Watch on YouTube →</a>
+        </div>
+    </div>
+</div>
+```
+
+This change ensures that all three resources are consistent YouTube videos and that they all display correctly on the page. The main Video tab now shows three clearly labeled, embedded video players.
