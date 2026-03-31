@@ -1,10 +1,11 @@
-Not a pain at all! That makes perfect sense. You want:
+Got it! Now we have 4 videos total:
 
-· Keep the original video (the one that was there before)
-· Smaller preview screens (not full-width)
-· Two videos side-by-side in one row, and another row below
+1. Original video (the one that was there before)
+2. Video 1: ABC Gardening Australia (Angus Stewart) - bqmPIurVNXk
+3. Video 2: Native Seed Collection Part 1 - WIFln51ZM4M
+4. Video 3: Native Seed Collection Part 2 - e502faCAx5w
 
-Here's the updated Tab 10 code with a grid layout showing 2 videos per row, and I've kept your original video as well:
+Here's the updated Tab 10 code with 2 videos per row (2 rows, 4 videos total):
 
 ```html
 <!-- ===== TAB 10: VIDEO RESOURCES ===== -->
@@ -15,7 +16,17 @@ Here's the updated Tab 10 code with a grid layout showing 2 videos per row, and 
     <!-- ROW 1: Two Videos Side by Side -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
         
-        <!-- Original Video (ABC Gardening Australia with Angus Stewart) -->
+        <!-- Original Video (Existing one from your code) -->
+        <div style="background: var(--bg-light); border-radius: 1.5rem; padding: 1.2rem; border: 1px solid var(--border-light);">
+            <h4 style="margin-top: 0; margin-bottom: 0.8rem;"><i class="fab fa-youtube" style="color:red;"></i> Native Seed Collection Overview</h4>
+            <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; border-radius:0.8rem; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+                <iframe style="position:absolute; top:0; left:0; width:100%; height:100%;" src="https://www.youtube.com/embed/F01XSu_U8H4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p style="margin: 0.8rem 0 0 0; font-size: 0.85rem;">Comprehensive guide to native seed collection fundamentals.</p>
+            <a href="https://www.youtube.com/watch?v=F01XSu_U8H4" target="_blank" style="font-size: 0.8rem;">Open in YouTube →</a>
+        </div>
+        
+        <!-- Video 1: ABC Gardening Australia (Angus Stewart) -->
         <div style="background: var(--bg-light); border-radius: 1.5rem; padding: 1.2rem; border: 1px solid var(--border-light);">
             <h4 style="margin-top: 0; margin-bottom: 0.8rem;"><i class="fab fa-youtube" style="color:red;"></i> Collecting Native Seed (ABC)</h4>
             <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; border-radius:0.8rem; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
@@ -24,8 +35,12 @@ Here's the updated Tab 10 code with a grid layout showing 2 videos per row, and 
             <p style="margin: 0.8rem 0 0 0; font-size: 0.85rem;">Angus Stewart demonstrates native seed collection essentials.</p>
             <a href="https://www.youtube.com/watch?v=bqmPIurVNXk&t=1s" target="_blank" style="font-size: 0.8rem;">Open in YouTube →</a>
         </div>
+    </div>
+    
+    <!-- ROW 2: Two Videos Side by Side -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1rem 0 2rem 0;">
         
-        <!-- Video 2: Second YouTube Video (Part 1) -->
+        <!-- Video 2: Native Seed Collection Part 1 -->
         <div style="background: var(--bg-light); border-radius: 1.5rem; padding: 1.2rem; border: 1px solid var(--border-light);">
             <h4 style="margin-top: 0; margin-bottom: 0.8rem;"><i class="fab fa-youtube" style="color:red;"></i> Native Seed Collection - Part 1</h4>
             <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; border-radius:0.8rem; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
@@ -34,13 +49,9 @@ Here's the updated Tab 10 code with a grid layout showing 2 videos per row, and 
             <p style="margin: 0.8rem 0 0 0; font-size: 0.85rem;">When to collect, identifying ripe seed, and ethical practices.</p>
             <a href="https://www.youtube.com/watch?v=WIFln51ZM4M&t=6s" target="_blank" style="font-size: 0.8rem;">Open in YouTube →</a>
         </div>
-    </div>
-    
-    <!-- ROW 2: Single Video (or could be two if you add more) -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1rem 0 2rem 0;">
         
-        <!-- Video 3: Third YouTube Video (Part 2) -->
-        <div style="background: var(--bg-light); border-radius: 1.5rem; padding: 1.2rem; border: 1px solid var(--border-light); max-width: 500px;">
+        <!-- Video 3: Native Seed Collection Part 2 -->
+        <div style="background: var(--bg-light); border-radius: 1.5rem; padding: 1.2rem; border: 1px solid var(--border-light);">
             <h4 style="margin-top: 0; margin-bottom: 0.8rem;"><i class="fab fa-youtube" style="color:red;"></i> Native Seed Collection - Part 2</h4>
             <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; border-radius:0.8rem; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
                 <iframe style="position:absolute; top:0; left:0; width:100%; height:100%;" src="https://www.youtube.com/embed/e502faCAx5w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -48,17 +59,15 @@ Here's the updated Tab 10 code with a grid layout showing 2 videos per row, and 
             <p style="margin: 0.8rem 0 0 0; font-size: 0.85rem;">Cleaning methods, storage protocols, and working with different fruit types.</p>
             <a href="https://www.youtube.com/watch?v=e502faCAx5w" target="_blank" style="font-size: 0.8rem;">Open in YouTube →</a>
         </div>
-        
-        <!-- Optional: You can add a fourth video here if you have one -->
-        
     </div>
     
     <!-- Tips Section -->
     <div style="background: var(--primary-dark); color: white; border-radius: 2rem; padding: 1.5rem; margin: 1rem 0 0 0;">
         <h3 style="color: var(--accent-gold); margin-top: 0;"><i class="fas fa-lightbulb"></i> How to Use These Videos</h3>
         <ul style="margin-left: 1.5rem;">
-            <li>Start with the ABC video for an excellent overview</li>
-            <li>Watch Part 1 and Part 2 for more detailed techniques</li>
+            <li>Start with the <strong>Original video</strong> for a comprehensive overview</li>
+            <li>Watch the <strong>ABC video</strong> with Angus Stewart for expert insights</li>
+            <li>Follow up with <strong>Part 1 & Part 2</strong> for detailed techniques on collection, cleaning, and storage</li>
             <li>Take notes on key timings mentioned for different species</li>
             <li>Share these resources with your team before collection trips</li>
         </ul>
@@ -66,19 +75,19 @@ Here's the updated Tab 10 code with a grid layout showing 2 videos per row, and 
 </div>
 ```
 
-What this does:
+Layout Summary:
 
-1. Row 1 (Top Row): Two videos side-by-side
-   · Original ABC video (Angus Stewart)
-   · Video 2 (Part 1)
-2. Row 2 (Bottom Row): Single video (Video 3 - Part 2)
-   · You could easily add a fourth video here if you want two in the bottom row as well
-3. Smaller preview screens:
-   · Each video card has padding: 1.2rem (less than before)
-   · Videos are contained in cards with max-width controlled by the grid
-   · On mobile, they'll stack vertically (auto-fit handles responsive design)
-4. Clean layout:
-   · Each video has a small title, description, and "Open in YouTube" link
-   · Consistent styling with your existing design
+Row Left Video Right Video
+Row 1 Original video (F01XSu_U8H4) ABC video (bqmPIurVNXk)
+Row 2 Part 1 (WIFln51ZM4M) Part 2 (e502faCAx5w)
 
-If you'd prefer two videos in the bottom row as well, just add another video card in the second row (I left a commented spot for it). Or if you want all 3 videos in one row with 2 + 1 layout, let me know and I can adjust the grid to show them all in one responsive row.
+Features:
+
+· ✅ All 4 videos displayed
+· ✅ 2 videos per row (side by side)
+· ✅ Smaller preview screens with compact cards
+· ✅ Responsive: on mobile, they stack into 1 column
+· ✅ Each video has a title, description, and "Open in YouTube" link
+· ✅ Consistent styling with your existing design
+
+If you want to adjust the order or add descriptions for the original video, just let me know!
